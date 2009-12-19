@@ -46,7 +46,7 @@
     _maxPlyVisited = MAX(_maxPlyVisited, [[self.path pathComponents] count]);
 }
 
-- (void)unsafeUndoMove:(id)move {
+- (void)undoLegalMove:(id)move {
     self.path = [self.path stringByDeletingLastPathComponent];
 }
 

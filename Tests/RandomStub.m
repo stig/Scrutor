@@ -24,7 +24,7 @@
     @throw @"performMove";
 }
 
-- (void)unsafeUndoMove:(id)move {
+- (void)undoLegalMove:(id)move {
     @throw @"undoMove";
 }    
 

@@ -66,7 +66,7 @@
         if (sc > best)
             best = sc;
         
-        [state unsafeUndoMove:m];
+        [state undoLegalMove:m];
     }
     return best;
 }
@@ -87,7 +87,7 @@
             bestMove = m;
         }
         
-        [state unsafeUndoMove:m];
+        [state undoLegalMove:m];
         [pool drain];
     }
     

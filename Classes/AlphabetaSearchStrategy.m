@@ -67,7 +67,7 @@
         if (sc > alpha)
             alpha = sc;
         
-        [state unsafeUndoMove:m];
+        [state undoLegalMove:m];
         
         if (beta != INT_MIN && alpha > beta)
             break;
@@ -93,7 +93,7 @@
             bestMove = m;
         }
         
-        [state unsafeUndoMove:m];
+        [state undoLegalMove:m];
         [pool drain];
     }
     
