@@ -14,9 +14,12 @@
 		BC72D5E510DD633F0066B1B8 /* RandomSearchStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D5E310DD633F0066B1B8 /* RandomSearchStrategy.m */; };
 		BC72D5F410DD63830066B1B8 /* libScrutor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libScrutor.a */; };
 		BC72D60F10DD647B0066B1B8 /* AbstractStub.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D60E10DD647B0066B1B8 /* AbstractStub.m */; };
-		BC72D61B10DD65750066B1B8 /* MiniMaxStub.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D61A10DD65750066B1B8 /* MiniMaxStub.m */; };
+		BC72D61B10DD65750066B1B8 /* NegamaxStub.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D61A10DD65750066B1B8 /* NegamaxStub.m */; };
 		BC72D61E10DD66640066B1B8 /* RandomStub.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D61D10DD66640066B1B8 /* RandomStub.m */; };
 		BC72D62D10DD67E90066B1B8 /* RandomSearchStrategyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D62C10DD67E90066B1B8 /* RandomSearchStrategyTest.m */; };
+		BC72D64510DD6F930066B1B8 /* NegamaxSearchStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = BC72D64310DD6F930066B1B8 /* NegamaxSearchStrategy.h */; };
+		BC72D64610DD6F930066B1B8 /* NegamaxSearchStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D64410DD6F930066B1B8 /* NegamaxSearchStrategy.m */; };
+		BC72D65010DD70C60066B1B8 /* NegamaxSearchStrategyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D64F10DD70C60066B1B8 /* NegamaxSearchStrategyTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,12 +42,16 @@
 		BC72D5EE10DD63780066B1B8 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		BC72D60D10DD647B0066B1B8 /* AbstractStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractStub.h; sourceTree = "<group>"; };
 		BC72D60E10DD647B0066B1B8 /* AbstractStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractStub.m; sourceTree = "<group>"; };
-		BC72D61910DD65750066B1B8 /* MiniMaxStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniMaxStub.h; sourceTree = "<group>"; };
-		BC72D61A10DD65750066B1B8 /* MiniMaxStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiniMaxStub.m; sourceTree = "<group>"; };
+		BC72D61910DD65750066B1B8 /* NegamaxStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NegamaxStub.h; sourceTree = "<group>"; };
+		BC72D61A10DD65750066B1B8 /* NegamaxStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NegamaxStub.m; sourceTree = "<group>"; };
 		BC72D61C10DD66640066B1B8 /* RandomStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomStub.h; sourceTree = "<group>"; };
 		BC72D61D10DD66640066B1B8 /* RandomStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomStub.m; sourceTree = "<group>"; };
 		BC72D62B10DD67E90066B1B8 /* RandomSearchStrategyTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomSearchStrategyTest.h; sourceTree = "<group>"; };
 		BC72D62C10DD67E90066B1B8 /* RandomSearchStrategyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomSearchStrategyTest.m; sourceTree = "<group>"; };
+		BC72D64310DD6F930066B1B8 /* NegamaxSearchStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NegamaxSearchStrategy.h; sourceTree = "<group>"; };
+		BC72D64410DD6F930066B1B8 /* NegamaxSearchStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NegamaxSearchStrategy.m; sourceTree = "<group>"; };
+		BC72D64E10DD70C60066B1B8 /* NegamaxSearchStrategyTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NegamaxSearchStrategyTest.h; sourceTree = "<group>"; };
+		BC72D64F10DD70C60066B1B8 /* NegamaxSearchStrategyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NegamaxSearchStrategyTest.m; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libScrutor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libScrutor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,9 +108,11 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BC72D5D310DD62610066B1B8 /* SearchStrategy.h */,
 				BC72D5E210DD633F0066B1B8 /* RandomSearchStrategy.h */,
 				BC72D5E310DD633F0066B1B8 /* RandomSearchStrategy.m */,
-				BC72D5D310DD62610066B1B8 /* SearchStrategy.h */,
+				BC72D64310DD6F930066B1B8 /* NegamaxSearchStrategy.h */,
+				BC72D64410DD6F930066B1B8 /* NegamaxSearchStrategy.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -121,12 +130,14 @@
 			children = (
 				BC72D60D10DD647B0066B1B8 /* AbstractStub.h */,
 				BC72D60E10DD647B0066B1B8 /* AbstractStub.m */,
-				BC72D61910DD65750066B1B8 /* MiniMaxStub.h */,
-				BC72D61A10DD65750066B1B8 /* MiniMaxStub.m */,
 				BC72D61C10DD66640066B1B8 /* RandomStub.h */,
 				BC72D61D10DD66640066B1B8 /* RandomStub.m */,
 				BC72D62B10DD67E90066B1B8 /* RandomSearchStrategyTest.h */,
 				BC72D62C10DD67E90066B1B8 /* RandomSearchStrategyTest.m */,
+				BC72D61910DD65750066B1B8 /* NegamaxStub.h */,
+				BC72D61A10DD65750066B1B8 /* NegamaxStub.m */,
+				BC72D64E10DD70C60066B1B8 /* NegamaxSearchStrategyTest.h */,
+				BC72D64F10DD70C60066B1B8 /* NegamaxSearchStrategyTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -141,6 +152,7 @@
 				AA747D9F0F9514B9006C5449 /* Scrutor_Prefix.pch in Headers */,
 				BC72D5D510DD62610066B1B8 /* SearchStrategy.h in Headers */,
 				BC72D5E410DD633F0066B1B8 /* RandomSearchStrategy.h in Headers */,
+				BC72D64510DD6F930066B1B8 /* NegamaxSearchStrategy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,9 +246,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC72D60F10DD647B0066B1B8 /* AbstractStub.m in Sources */,
-				BC72D61B10DD65750066B1B8 /* MiniMaxStub.m in Sources */,
+				BC72D61B10DD65750066B1B8 /* NegamaxStub.m in Sources */,
 				BC72D61E10DD66640066B1B8 /* RandomStub.m in Sources */,
 				BC72D62D10DD67E90066B1B8 /* RandomSearchStrategyTest.m in Sources */,
+				BC72D65010DD70C60066B1B8 /* NegamaxSearchStrategyTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC72D5E510DD633F0066B1B8 /* RandomSearchStrategy.m in Sources */,
+				BC72D64610DD6F930066B1B8 /* NegamaxSearchStrategy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

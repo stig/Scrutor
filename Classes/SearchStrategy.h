@@ -19,7 +19,7 @@
 @end
 
 
-@protocol SearchStrategy < NSObject >
+@protocol SearchStrategy < NSObject, NSCoding >
 
 - (id)moveFromState:(id<SearchStrategyDelegate>)state;
 
