@@ -13,7 +13,7 @@
 
 @interface NegamaxSearchStrategyTest : SenTestCase {
     NegamaxStub *stub;
-    NegamaxSearchStrategy *searcher;
+    NegamaxSearchStrategy *strategy;
 }
 
 @end

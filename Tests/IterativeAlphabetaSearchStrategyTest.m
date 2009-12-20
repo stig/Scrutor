@@ -16,43 +16,43 @@
 @implementation IterativeAlphabetaSearchStrategyTest
 
 - (void)setUp {
-    searcher = [IterativeAlphabetaSearchStrategy new];
+    strategy = [IterativeAlphabetaSearchStrategy new];
 }
 
 - (void)tearDown {
-    [searcher release];
+    [strategy release];
 }
 
 #pragma mark -
 
 - (void)testSearchSpaceExhausted {
     NegamaxStub *stub = [[NegamaxStub new] autorelease];
-    searcher.timeInterval = 10.0; // Allow many seconds.
+    strategy.timeInterval = 10.0; // Allow many seconds.
     
     NSDate *start = [NSDate date];
-    id move = [searcher moveFromState:stub];
+    id move = [strategy moveFromState:stub];
     NSTimeInterval duration = -[start timeIntervalSinceNow];
     
     STAssertTrue(duration < 0.1, @"Duration was %f", duration);
     STAssertEqualObjects(move, @"B", nil);
 
     STAssertEquals(stub.maxPlyVisited, 5u, @"reached max ply");
-    STAssertTrue(searcher.foundEnd, @"reached max ply in all paths");
+    STAssertTrue(strategy.foundEnd, @"reached max ply in all paths");
 }
 
 - (void)testUsesUpTime {
     IterativeStub *stub = [[IterativeStub new] autorelease];
-    searcher.timeInterval = 0.1;
+    strategy.timeInterval = 0.1;
 
     NSDate *start = [NSDate date];
-    id move = [searcher moveFromState:stub];
+    id move = [strategy moveFromState:stub];
     NSTimeInterval duration = -[start timeIntervalSinceNow];
     
     STAssertNotNil(move, nil);
     STAssertTrue(stub.maxPlyVisited > 5u, nil);
     STAssertTrue(stub.maxPlyVisited < 9u, nil);
     STAssertEqualsWithAccuracy(duration, 0.1, 0.005, nil);
-    STAssertFalse(searcher.foundEnd, @"Did not reach end in all paths");
+    STAssertFalse(strategy.foundEnd, @"Did not reach end in all paths");
     
     // Verify that a plain AlphaBeta to the highest completed level finds the same best move.
     AlphabetaSearchStrategy *ab = [[AlphabetaSearchStrategy new] autorelease];
@@ -66,20 +66,20 @@
 #pragma mark -
 
 - (void)testCopy {
-    searcher.timeInterval = random();
-    IterativeAlphabetaSearchStrategy *copy = [[searcher copy] autorelease];
-    STAssertEqualObjects(copy, searcher, nil);
-    STAssertEquals(copy.timeInterval, searcher.timeInterval, nil);
+    strategy.timeInterval = random();
+    IterativeAlphabetaSearchStrategy *copy = [[strategy copy] autorelease];
+    STAssertEqualObjects(copy, strategy, nil);
+    STAssertEquals(copy.timeInterval, strategy.timeInterval, nil);
 }
 
 - (void)testCoding {
-    searcher.timeInterval = random();
+    strategy.timeInterval = random();
     
     NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"coding.data"];
-    [NSKeyedArchiver archiveRootObject:searcher toFile:path];
+    [NSKeyedArchiver archiveRootObject:strategy toFile:path];
     
     id unarchived = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-    STAssertEqualObjects(unarchived, searcher, nil);
+    STAssertEqualObjects(unarchived, strategy, nil);
     STAssertNotNil(unarchived, nil);
 }
 

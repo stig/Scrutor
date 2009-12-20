@@ -15,51 +15,51 @@
 
 - (void)setUp {
     stub = [NegamaxStub new];
-    searcher = [AlphabetaSearchStrategy new];
+    strategy = [AlphabetaSearchStrategy new];
 }
 
 - (void)tearDown {
     [stub release];
-    [searcher release];
+    [strategy release];
 }
 
 #pragma mark -
 
 - (void)testMaxPly1 {
-    searcher.maxPly = 1;
-    id move = [searcher moveFromState:stub];
+    strategy.maxPly = 1;
+    id move = [strategy moveFromState:stub];
     STAssertEqualObjects(move, @"A", nil);
     STAssertEquals(stub.countOfVisited, 2u, nil);
     STAssertEquals(stub.maxPlyVisited, 1u, nil);
 }
 
 - (void)testMaxPly2 {
-    searcher.maxPly = 2;
-    id move = [searcher moveFromState:stub];
+    strategy.maxPly = 2;
+    id move = [strategy moveFromState:stub];
     STAssertEqualObjects(move, @"A", nil);
     STAssertEquals(stub.countOfVisited, 5u, nil);
     STAssertEquals(stub.maxPlyVisited, 2u, nil);
 }
 
 - (void)testMaxPly3 {
-    searcher.maxPly = 3;
-    id move = [searcher moveFromState:stub];
+    strategy.maxPly = 3;
+    id move = [strategy moveFromState:stub];
     STAssertEqualObjects(move, @"B", nil);
     STAssertEquals(stub.countOfVisited, 13u, nil);
     STAssertEquals(stub.maxPlyVisited, 3u, nil);
 }
 
 - (void)testMaxPly4 {
-    searcher.maxPly = 4;
-    id move = [searcher moveFromState:stub];
+    strategy.maxPly = 4;
+    id move = [strategy moveFromState:stub];
     STAssertEqualObjects(move, @"A", nil);
     STAssertEquals(stub.countOfVisited, 26u, nil);
     STAssertEquals(stub.maxPlyVisited, 4u, nil);
 }
 
 - (void)testMaxPly5 {
-    searcher.maxPly = 5;
-    id move = [searcher moveFromState:stub];
+    strategy.maxPly = 5;
+    id move = [strategy moveFromState:stub];
     STAssertEqualObjects(move, @"B", nil);
     STAssertEquals(stub.countOfVisited, 56u, nil);
     STAssertEquals(stub.maxPlyVisited, 5u, nil);
@@ -68,20 +68,20 @@
 #pragma mark -
 
 - (void)testCopy {
-    searcher.maxPly = random();
-    AlphabetaSearchStrategy *copy = [[searcher copy] autorelease];
-    STAssertEqualObjects(copy, searcher, nil);
-    STAssertEquals(copy.maxPly, searcher.maxPly, nil);
+    strategy.maxPly = random();
+    AlphabetaSearchStrategy *copy = [[strategy copy] autorelease];
+    STAssertEqualObjects(copy, strategy, nil);
+    STAssertEquals(copy.maxPly, strategy.maxPly, nil);
 }
 
 - (void)testCoding {
-    searcher.maxPly = random();
+    strategy.maxPly = random();
 
     NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"coding.data"];
-    [NSKeyedArchiver archiveRootObject:searcher toFile:path];
+    [NSKeyedArchiver archiveRootObject:strategy toFile:path];
     
     id unarchived = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-    STAssertEqualObjects(unarchived, searcher, nil);
+    STAssertEqualObjects(unarchived, strategy, nil);
     STAssertNotNil(unarchived, nil);
 }
 

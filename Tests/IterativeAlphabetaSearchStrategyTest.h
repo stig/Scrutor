@@ -11,7 +11,7 @@
 @class IterativeAlphabetaSearchStrategy;
 
 @interface IterativeAlphabetaSearchStrategyTest : SenTestCase {
-    IterativeAlphabetaSearchStrategy *searcher;
+    IterativeAlphabetaSearchStrategy *strategy;
 }
 
 @end
