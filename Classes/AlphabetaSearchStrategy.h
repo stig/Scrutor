@@ -15,6 +15,7 @@
  @see http://en.wikipedia.org/wiki/Alpha-beta_pruning
  */
 @interface AlphabetaSearchStrategy : NSObject < SearchStrategy > {
+@private
     NSUInteger _maxPly;
 }
 

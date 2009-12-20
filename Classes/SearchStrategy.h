@@ -14,24 +14,30 @@
 @protocol SearchStrategyDelegate < NSObject >
 
 /**
- Transform the state into its successor.
+ @brief Transform the state into its successor.
+ 
+ This move is guaranteed to have been returned by the legalMoves method for this state.
  */
 - (void)performLegalMove:(id)move;
 
 /**
- Reverts the state back to its successor.
+ @brief Reverts the state back to its successor.
+ 
+ The move passed in will be the last move passed to performLegalMove: for this state.
  */
 - (void)undoLegalMove:(id)move;
 
 /**
- Returns an array of legal moves.
+ @brief Returns an array of legal moves.
+ 
  These will be used to translate the state into valid successor states.
  If passing is allowed in your game it is your responsibility to return a pass move from this method.
  */
 - (NSArray*)legalMoves;
 
 /**
- Return the fitness score of a particular state.
+ @brief Return the fitness score of a particular state.
+ 
  This should be a positive score if the state is fortuitous for the current player.
  Zero means that neither player has an advantage.
  */

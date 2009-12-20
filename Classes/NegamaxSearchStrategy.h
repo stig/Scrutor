@@ -15,11 +15,12 @@
  @see http://en.wikipedia.org/wiki/Negamax
  */
 @interface NegamaxSearchStrategy : NSObject < SearchStrategy > {
+@private
     NSUInteger _maxPly;
 }
 
 /**
- The maximum ply (depth) to search to.
+ The maximum ply for searching.
  */
 @property NSUInteger maxPly;
 

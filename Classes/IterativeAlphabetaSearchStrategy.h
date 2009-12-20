@@ -15,10 +15,9 @@
  @see http://en.wikipedia.org/wiki/Iterative_deepening_depth-first_search
  */
 @interface IterativeAlphabetaSearchStrategy : NSObject < SearchStrategy > {
+@private
     NSTimeInterval _timeInterval;
     BOOL _foundEnd;
-
-@private
     NSDate *_cutOffDate;
 }
 
