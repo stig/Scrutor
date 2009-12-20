@@ -27,6 +27,9 @@
 		BC72D6BF10DD8F350066B1B8 /* IterativeAlphabetaSearchStrategyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D6BE10DD8F350066B1B8 /* IterativeAlphabetaSearchStrategyTest.m */; };
 		BC72D6C210DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = BC72D6C010DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.h */; };
 		BC72D6C310DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D6C110DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.m */; };
+		BC72D8B610DE519F0066B1B8 /* SingleMoveOptimisationDecorator.h in Headers */ = {isa = PBXBuildFile; fileRef = BC72D8B410DE519F0066B1B8 /* SingleMoveOptimisationDecorator.h */; };
+		BC72D8B710DE519F0066B1B8 /* SingleMoveOptimisationDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D8B510DE519F0066B1B8 /* SingleMoveOptimisationDecorator.m */; };
+		BC72D8BA10DE53280066B1B8 /* SingleMoveOptimisationDecoratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D8B910DE53280066B1B8 /* SingleMoveOptimisationDecoratorTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,10 @@
 		BC72D6BE10DD8F350066B1B8 /* IterativeAlphabetaSearchStrategyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterativeAlphabetaSearchStrategyTest.m; sourceTree = "<group>"; };
 		BC72D6C010DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IterativeAlphabetaSearchStrategy.h; sourceTree = "<group>"; };
 		BC72D6C110DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterativeAlphabetaSearchStrategy.m; sourceTree = "<group>"; };
+		BC72D8B410DE519F0066B1B8 /* SingleMoveOptimisationDecorator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMoveOptimisationDecorator.h; sourceTree = "<group>"; };
+		BC72D8B510DE519F0066B1B8 /* SingleMoveOptimisationDecorator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMoveOptimisationDecorator.m; sourceTree = "<group>"; };
+		BC72D8B810DE53280066B1B8 /* SingleMoveOptimisationDecoratorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMoveOptimisationDecoratorTest.h; sourceTree = "<group>"; };
+		BC72D8B910DE53280066B1B8 /* SingleMoveOptimisationDecoratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMoveOptimisationDecoratorTest.m; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libScrutor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libScrutor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -134,6 +141,8 @@
 				BC72D68B10DD768C0066B1B8 /* AlphabetaSearchStrategy.m */,
 				BC72D6C010DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.h */,
 				BC72D6C110DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.m */,
+				BC72D8B410DE519F0066B1B8 /* SingleMoveOptimisationDecorator.h */,
+				BC72D8B510DE519F0066B1B8 /* SingleMoveOptimisationDecorator.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -165,6 +174,8 @@
 				BC72D68310DD76200066B1B8 /* AlphabetaSearchStrategyTest.m */,
 				BC72D6BD10DD8F350066B1B8 /* IterativeAlphabetaSearchStrategyTest.h */,
 				BC72D6BE10DD8F350066B1B8 /* IterativeAlphabetaSearchStrategyTest.m */,
+				BC72D8B810DE53280066B1B8 /* SingleMoveOptimisationDecoratorTest.h */,
+				BC72D8B910DE53280066B1B8 /* SingleMoveOptimisationDecoratorTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -182,6 +193,7 @@
 				BC72D64510DD6F930066B1B8 /* NegamaxSearchStrategy.h in Headers */,
 				BC72D68C10DD768C0066B1B8 /* AlphabetaSearchStrategy.h in Headers */,
 				BC72D6C210DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.h in Headers */,
+				BC72D8B610DE519F0066B1B8 /* SingleMoveOptimisationDecorator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +294,7 @@
 				BC72D68410DD76200066B1B8 /* AlphabetaSearchStrategyTest.m in Sources */,
 				BC72D6B410DD8DEC0066B1B8 /* IterativeStub.m in Sources */,
 				BC72D6BF10DD8F350066B1B8 /* IterativeAlphabetaSearchStrategyTest.m in Sources */,
+				BC72D8BA10DE53280066B1B8 /* SingleMoveOptimisationDecoratorTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +306,7 @@
 				BC72D64610DD6F930066B1B8 /* NegamaxSearchStrategy.m in Sources */,
 				BC72D68D10DD768C0066B1B8 /* AlphabetaSearchStrategy.m in Sources */,
 				BC72D6C310DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.m in Sources */,
+				BC72D8B710DE519F0066B1B8 /* SingleMoveOptimisationDecorator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

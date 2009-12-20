@@ -24,8 +24,6 @@
     return [self retain];
 }
 
-#pragma mark -
-
 - (BOOL)isEqual:(id)object {
     return [self isMemberOfClass:[object class]];
 }    

@@ -32,8 +32,6 @@
     return copy;
 }
 
-#pragma mark -
-
 - (BOOL)isEqual:(id)object {
     if (![self isMemberOfClass:[object class]])
         return NO;
