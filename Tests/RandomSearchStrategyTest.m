@@ -13,8 +13,9 @@
 
 @implementation RandomSearchStrategyTest
 
-- (NSInteger)searchCount { return 1e4; }
-    
+- (NSInteger)searchCount {
+    return 1e4;
+}    
 
 - (void)testRandomSearch {
     RandomStub *stub = [[RandomStub new] autorelease];
