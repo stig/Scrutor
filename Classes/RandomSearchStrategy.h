@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "SearchStrategy.h"
 
-
+/**
+ A search strategy that simply picks one of the legal moves at random.
+ */
 @interface RandomSearchStrategy : NSObject < SearchStrategy >
 @end

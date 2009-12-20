@@ -146,6 +146,7 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BC72D94610DE757C0066B1B8 /* Decorator */,
 				BC72D5D310DD62610066B1B8 /* SearchStrategy.h */,
 				BC72D5E210DD633F0066B1B8 /* RandomSearchStrategy.h */,
 				BC72D5E310DD633F0066B1B8 /* RandomSearchStrategy.m */,
@@ -155,12 +156,6 @@
 				BC72D68B10DD768C0066B1B8 /* AlphabetaSearchStrategy.m */,
 				BC72D6C010DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.h */,
 				BC72D6C110DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.m */,
-				BC72D8F510DE57AE0066B1B8 /* AbstractDecorator.h */,
-				BC72D8F710DE57AE0066B1B8 /* AbstractDecorator.m */,
-				BC72D8B410DE519F0066B1B8 /* SingleMoveOptimisationDecorator.h */,
-				BC72D8B510DE519F0066B1B8 /* SingleMoveOptimisationDecorator.m */,
-				BC72D90E10DE632C0066B1B8 /* CopyStateDecorator.h */,
-				BC72D90F10DE632C0066B1B8 /* CopyStateDecorator.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -208,6 +203,19 @@
 				BC72D92B10DE70540066B1B8 /* SingleMoveStub.m */,
 			);
 			name = Stubs;
+			sourceTree = "<group>";
+		};
+		BC72D94610DE757C0066B1B8 /* Decorator */ = {
+			isa = PBXGroup;
+			children = (
+				BC72D8F510DE57AE0066B1B8 /* AbstractDecorator.h */,
+				BC72D8F710DE57AE0066B1B8 /* AbstractDecorator.m */,
+				BC72D8B410DE519F0066B1B8 /* SingleMoveOptimisationDecorator.h */,
+				BC72D8B510DE519F0066B1B8 /* SingleMoveOptimisationDecorator.m */,
+				BC72D90E10DE632C0066B1B8 /* CopyStateDecorator.h */,
+				BC72D90F10DE632C0066B1B8 /* CopyStateDecorator.m */,
+			);
+			name = Decorator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

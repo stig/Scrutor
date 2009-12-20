@@ -10,6 +10,10 @@
 
 /**
  Abstract class to aid implementation of decorators.
+ 
+ Decorators can be chained.
+ 
+ @see http://en.wikipedia.org/wiki/Decorator_pattern
  */
 @interface AbstractDecorator : NSObject < SearchStrategy > {
     id<SearchStrategy> _underlyingStrategy;

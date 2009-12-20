@@ -12,7 +12,7 @@
 @implementation CopyStateDecorator
 
 - (id)moveFromState:(id<SearchStrategyDelegate>)delegate {
-    id copy = [delegate copy];
+    id copy = [(id)delegate copy];
     id move = [self.underlyingStrategy moveFromState:copy];
     [copy release];
     return move;

@@ -8,5 +8,12 @@
 
 #import "AbstractDecorator.h"
 
+/**
+ This decorator is useful if you have observers of the original state and
+ don't want it to be temporarily modified during the search for a best move.
+ 
+ In addition to the SearchStrategyDelegate protocol, your states must
+ implement the NSCopying protocol to use this decorator.
+ */
 @interface CopyStateDecorator : AbstractDecorator
 @end

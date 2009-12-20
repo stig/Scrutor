@@ -13,10 +13,6 @@
 
 @synthesize callCount = _callCount;
 
-- (id)copyWithZone:(NSZone *)zone {
-    return [self retain];
-}
-
 - (NSArray*)legalMoves {
     _callCount++;
     return [NSArray arrayWithObject:@"A"];

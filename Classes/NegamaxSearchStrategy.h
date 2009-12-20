@@ -9,10 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "SearchStrategy.h"
 
+/**
+ A strategy implementing the Negamax algorithm.
+ 
+ @see http://en.wikipedia.org/wiki/Negamax
+ */
 @interface NegamaxSearchStrategy : NSObject < SearchStrategy > {
     NSUInteger _maxPly;
 }
 
+/**
+ The maximum ply (depth) to search to.
+ */
 @property NSUInteger maxPly;
 
 @end

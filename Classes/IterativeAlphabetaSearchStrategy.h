@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "SearchStrategy.h"
 
+/**
+ A strategy implementing Iterative Deepening Negamax with Alpha-beta pruning.
+ 
+ @see http://en.wikipedia.org/wiki/Iterative_deepening_depth-first_search
+ */
 @interface IterativeAlphabetaSearchStrategy : NSObject < SearchStrategy > {
     NSTimeInterval _timeInterval;
     BOOL _foundEnd;
@@ -17,7 +22,14 @@
     NSDate *_cutOffDate;
 }
 
+/**
+ The maximum time interval to allow for the search.
+ */
 @property NSTimeInterval timeInterval;
+
+/**
+ If true, the previous search ended because a leaf node was reached on every branch that was not pruned.
+ */
 @property (readonly) BOOL foundEnd;
 
 @end
