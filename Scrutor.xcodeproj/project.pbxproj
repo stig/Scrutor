@@ -34,7 +34,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* Scrutor */;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = Scrutor;
 		};
 /* End PBXContainerItemProxy section */
@@ -45,7 +45,7 @@
 		BC72D5D310DD62610066B1B8 /* SearchStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchStrategy.h; sourceTree = "<group>"; };
 		BC72D5E210DD633F0066B1B8 /* RandomSearchStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomSearchStrategy.h; sourceTree = "<group>"; };
 		BC72D5E310DD633F0066B1B8 /* RandomSearchStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomSearchStrategy.m; sourceTree = "<group>"; };
-		BC72D5ED10DD63780066B1B8 /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.octest; path = "build/Debug-iphoneos/Tests.octest"; sourceTree = "<group>"; };
+		BC72D5ED10DD63780066B1B8 /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC72D5EE10DD63780066B1B8 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		BC72D60D10DD647B0066B1B8 /* AbstractStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractStub.h; sourceTree = "<group>"; };
 		BC72D60E10DD647B0066B1B8 /* AbstractStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractStub.m; sourceTree = "<group>"; };
@@ -320,8 +320,10 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Scrutor_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = Scrutor;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Debug;
 		};
