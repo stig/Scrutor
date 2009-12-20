@@ -60,7 +60,7 @@
     
     
     for (id m in moves) {
-        [state unsafePerformMove:m];
+        [state performLegalMove:m];
         
         NSInteger sc = -[self fitnessWithState:state
                                            ply:ply-1
@@ -104,7 +104,7 @@
         NSInteger alpha = INT_MIN;
         for (id m in moves) {
             NSAutoreleasePool *pool = [NSAutoreleasePool new];
-            [state unsafePerformMove:m];
+            [state performLegalMove:m];
             
             NSInteger sc = -[self fitnessWithState:state ply:ply alpha:INT_MIN beta:-alpha];
             if (sc > alpha) {

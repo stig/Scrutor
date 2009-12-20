@@ -11,7 +11,7 @@
 
 @protocol SearchStrategyDelegate < NSObject >
 
-- (void)unsafePerformMove:(id)move;
+- (void)performLegalMove:(id)move;
 - (void)undoLegalMove:(id)move;
 - (NSArray*)legalMoves;
 - (NSInteger)fitness;

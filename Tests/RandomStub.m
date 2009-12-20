@@ -20,7 +20,7 @@
     @throw @"fitness";
 }
 
-- (void)unsafePerformMove:(id)move {
+- (void)performLegalMove:(id)move {
     @throw @"performMove";
 }
 

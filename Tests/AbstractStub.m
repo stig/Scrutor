@@ -35,7 +35,7 @@
     return moves;
 }
 
-- (void)unsafePerformMove:(id)move {
+- (void)performLegalMove:(id)move {
 
 //    NSLog(@"Path: %@, Move: %@", self.path, move);
     

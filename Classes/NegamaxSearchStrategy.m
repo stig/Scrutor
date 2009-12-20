@@ -60,7 +60,7 @@
     
     NSInteger best = INT_MIN;
     for (id m in moves) {
-        [state unsafePerformMove:m];
+        [state performLegalMove:m];
         
         NSInteger sc = -[self fitnessWithState:state plyLeft:plyLeft-1];
         if (sc > best)
@@ -78,7 +78,7 @@
     NSInteger best = INT_MIN;
     for (id m in [state legalMoves]) {
         NSAutoreleasePool *pool = [NSAutoreleasePool new];        
-        [state unsafePerformMove:m];
+        [state performLegalMove:m];
         
         NSInteger sc = -[self fitnessWithState:state plyLeft:_maxPly-1];
         
