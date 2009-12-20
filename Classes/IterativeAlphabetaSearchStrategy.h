@@ -11,10 +11,13 @@
 
 @interface IterativeAlphabetaSearchStrategy : NSObject < SearchStrategy > {
     NSTimeInterval _timeInterval;
-    NSDate *_cutOffDate;
     BOOL _foundEnd;
+
+@private
+    NSDate *_cutOffDate;
 }
 
 @property NSTimeInterval timeInterval;
+@property (readonly) BOOL foundEnd;
 
 @end

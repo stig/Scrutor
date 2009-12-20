@@ -17,7 +17,7 @@
 }
 
 - (NSArray*)candidates {
-    return [@"A B C D C D E F G H I J K L M N O P Q R S T U V W X Y Z" componentsSeparatedByString:@" "];
+    return [@"A B C" componentsSeparatedByString:@" "];
 }
 
 - (NSArray*)legalMoves {

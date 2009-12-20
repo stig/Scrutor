@@ -14,7 +14,7 @@
 - (NSArray*)successors:(NSArray*)parents {
     NSMutableArray *successors = [NSMutableArray array];
     for (NSString *parent in parents) {
-        for (NSString *m in [NSArray arrayWithObjects:@"A", @"B", @"C", nil]) {
+        for (NSString *m in self.candidates) {
             NSString *path = [parent stringByAppendingPathComponent:m];
             [successors addObject:path];
         }
@@ -25,19 +25,19 @@
 - (id)init {
     if (self = [super init]) {
         
-        NSArray *nodes = [self candidates];
-        for (int ply = 0; ply < 5; ply++) {
-            nodes = [nodes arrayByAddingObjectsFromArray:[self successors:nodes]];
-            NSLog(@"ply %d", ply);
+        NSMutableArray *nodes = [self.candidates mutableCopy];
+        for (int ply = 0; ply < 9; ply++) {
+            [nodes addObjectsFromArray:[self successors:nodes]];
+             NSLog(@"Ply %u Got %u nodes", ply, nodes.count);
         }
         
-        NSMutableDictionary *tree = [_tree mutableCopy];
+        NSMutableDictionary *tree = [NSMutableDictionary dictionaryWithCapacity:nodes.count];
         for (NSString *node in nodes) {
             NSInteger spread = 1e5;
-            NSInteger score = (random() / spread) - (spread / 2);
+            NSInteger score = (random() % spread) - (spread / 2);
             [tree setObject:[NSNumber numberWithInteger:score] forKey:node];
         }
-        
+                
         _tree = [tree copy];
         
     }

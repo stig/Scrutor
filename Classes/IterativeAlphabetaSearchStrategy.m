@@ -8,10 +8,10 @@
 
 #import "IterativeAlphabetaSearchStrategy.h"
 
-
 @implementation IterativeAlphabetaSearchStrategy
 
 @synthesize timeInterval = _timeInterval;
+@synthesize foundEnd = _foundEnd;
 
 #pragma mark -
 
@@ -45,7 +45,8 @@
     // Have we run out of time?
     if ([_cutOffDate timeIntervalSinceNow] < 0)
         return 0;
-    
+
+    // TODO: move up above the previous statement?
     // Have we reached the maximum ply for this search?
 	if (!ply) {
         _foundEnd = NO;
