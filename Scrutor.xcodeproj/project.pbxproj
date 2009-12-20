@@ -23,6 +23,10 @@
 		BC72D68410DD76200066B1B8 /* AlphabetaSearchStrategyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D68310DD76200066B1B8 /* AlphabetaSearchStrategyTest.m */; };
 		BC72D68C10DD768C0066B1B8 /* AlphabetaSearchStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = BC72D68A10DD768C0066B1B8 /* AlphabetaSearchStrategy.h */; };
 		BC72D68D10DD768C0066B1B8 /* AlphabetaSearchStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D68B10DD768C0066B1B8 /* AlphabetaSearchStrategy.m */; };
+		BC72D6B410DD8DEC0066B1B8 /* IterativeStub.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D6B310DD8DEC0066B1B8 /* IterativeStub.m */; };
+		BC72D6BF10DD8F350066B1B8 /* IterativeAlphabetaSearchStrategyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D6BE10DD8F350066B1B8 /* IterativeAlphabetaSearchStrategyTest.m */; };
+		BC72D6C210DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = BC72D6C010DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.h */; };
+		BC72D6C310DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D6C110DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,12 @@
 		BC72D68310DD76200066B1B8 /* AlphabetaSearchStrategyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlphabetaSearchStrategyTest.m; sourceTree = "<group>"; };
 		BC72D68A10DD768C0066B1B8 /* AlphabetaSearchStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlphabetaSearchStrategy.h; sourceTree = "<group>"; };
 		BC72D68B10DD768C0066B1B8 /* AlphabetaSearchStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlphabetaSearchStrategy.m; sourceTree = "<group>"; };
+		BC72D6B210DD8DEC0066B1B8 /* IterativeStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IterativeStub.h; sourceTree = "<group>"; };
+		BC72D6B310DD8DEC0066B1B8 /* IterativeStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterativeStub.m; sourceTree = "<group>"; };
+		BC72D6BD10DD8F350066B1B8 /* IterativeAlphabetaSearchStrategyTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IterativeAlphabetaSearchStrategyTest.h; sourceTree = "<group>"; };
+		BC72D6BE10DD8F350066B1B8 /* IterativeAlphabetaSearchStrategyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterativeAlphabetaSearchStrategyTest.m; sourceTree = "<group>"; };
+		BC72D6C010DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IterativeAlphabetaSearchStrategy.h; sourceTree = "<group>"; };
+		BC72D6C110DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IterativeAlphabetaSearchStrategy.m; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libScrutor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libScrutor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -122,6 +132,8 @@
 				BC72D64410DD6F930066B1B8 /* NegamaxSearchStrategy.m */,
 				BC72D68A10DD768C0066B1B8 /* AlphabetaSearchStrategy.h */,
 				BC72D68B10DD768C0066B1B8 /* AlphabetaSearchStrategy.m */,
+				BC72D6C010DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.h */,
+				BC72D6C110DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -143,12 +155,16 @@
 				BC72D61D10DD66640066B1B8 /* RandomStub.m */,
 				BC72D61910DD65750066B1B8 /* NegamaxStub.h */,
 				BC72D61A10DD65750066B1B8 /* NegamaxStub.m */,
+				BC72D6B210DD8DEC0066B1B8 /* IterativeStub.h */,
+				BC72D6B310DD8DEC0066B1B8 /* IterativeStub.m */,
 				BC72D62B10DD67E90066B1B8 /* RandomSearchStrategyTest.h */,
 				BC72D62C10DD67E90066B1B8 /* RandomSearchStrategyTest.m */,
 				BC72D64E10DD70C60066B1B8 /* NegamaxSearchStrategyTest.h */,
 				BC72D64F10DD70C60066B1B8 /* NegamaxSearchStrategyTest.m */,
 				BC72D68210DD76200066B1B8 /* AlphabetaSearchStrategyTest.h */,
 				BC72D68310DD76200066B1B8 /* AlphabetaSearchStrategyTest.m */,
+				BC72D6BD10DD8F350066B1B8 /* IterativeAlphabetaSearchStrategyTest.h */,
+				BC72D6BE10DD8F350066B1B8 /* IterativeAlphabetaSearchStrategyTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -165,6 +181,7 @@
 				BC72D5E410DD633F0066B1B8 /* RandomSearchStrategy.h in Headers */,
 				BC72D64510DD6F930066B1B8 /* NegamaxSearchStrategy.h in Headers */,
 				BC72D68C10DD768C0066B1B8 /* AlphabetaSearchStrategy.h in Headers */,
+				BC72D6C210DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +280,8 @@
 				BC72D62D10DD67E90066B1B8 /* RandomSearchStrategyTest.m in Sources */,
 				BC72D65010DD70C60066B1B8 /* NegamaxSearchStrategyTest.m in Sources */,
 				BC72D68410DD76200066B1B8 /* AlphabetaSearchStrategyTest.m in Sources */,
+				BC72D6B410DD8DEC0066B1B8 /* IterativeStub.m in Sources */,
+				BC72D6BF10DD8F350066B1B8 /* IterativeAlphabetaSearchStrategyTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +292,7 @@
 				BC72D5E510DD633F0066B1B8 /* RandomSearchStrategy.m in Sources */,
 				BC72D64610DD6F930066B1B8 /* NegamaxSearchStrategy.m in Sources */,
 				BC72D68D10DD768C0066B1B8 /* AlphabetaSearchStrategy.m in Sources */,
+				BC72D6C310DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
