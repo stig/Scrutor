@@ -26,6 +26,14 @@
 
 #pragma mark -
 
+- (id)copyWithZone:(NSZone *)zone {
+    NegamaxSearchStrategy *copy = [[self class] new];
+    copy.maxPly = self.maxPly;
+    return copy;
+}
+
+#pragma mark -
+
 - (BOOL)isEqual:(id)object {
     if (![self isMemberOfClass:[object class]])
         return NO;

@@ -65,4 +65,14 @@
     STAssertEquals(stub.maxPlyVisited, 5u, nil);
 }
 
+#pragma mark -
+
+- (void)testCopy {
+    searcher.maxPly = random();
+    NegamaxSearchStrategy *copy = [[searcher copy] autorelease];
+    STAssertEqualObjects(copy, searcher, nil);
+    STAssertEquals(copy.maxPly, searcher.maxPly, nil);
+}
+
+
 @end

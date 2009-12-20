@@ -36,4 +36,10 @@
     }
 }
 
+- (void)testCopy {
+    RandomSearchStrategy *strategy = [[RandomSearchStrategy new] autorelease];
+    RandomSearchStrategy *copy = [[strategy copy] autorelease];
+    STAssertEqualObjects(copy, strategy, nil);
+}
+
 @end

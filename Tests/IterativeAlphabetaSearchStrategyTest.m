@@ -63,4 +63,13 @@
     STAssertEqualObjects(move, move2, nil);
 }
 
+#pragma mark -
+
+- (void)testCopy {
+    searcher.timeInterval = random();
+    IterativeAlphabetaSearchStrategy *copy = [[searcher copy] autorelease];
+    STAssertEqualObjects(copy, searcher, nil);
+    STAssertEquals(copy.timeInterval, searcher.timeInterval, nil);
+}
+
 @end

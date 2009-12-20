@@ -26,6 +26,14 @@
 
 #pragma mark -
 
+- (id)copyWithZone:(NSZone *)zone {
+    IterativeAlphabetaSearchStrategy *copy = [[self class] new];
+    copy.timeInterval = self.timeInterval;
+    return copy;
+}
+
+#pragma mark -
+
 - (BOOL)isEqual:(id)object {
     if (![self isMemberOfClass:[object class]])
         return NO;

@@ -11,21 +11,27 @@
 
 @implementation RandomSearchStrategy
 
-- (id)moveFromState:(id<SearchStrategyDelegate>)state {
-	NSParameterAssert(state);
-	NSArray *moves = [state legalMoves];
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    return [self init];
+}
 
-	NSUInteger idx = random() % moves.count;
-	return [moves objectAtIndex:idx];
+- (void)encodeWithCoder:(NSCoder *)aCoder {
 }
 
 #pragma mark -
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    return [super init];
+- (id)copyWithZone:(NSZone *)zone {
+    return [self retain];
 }
 
-- (void)encodeWithCoder:(NSCoder *)aCoder {
+#pragma mark -
+
+- (id)moveFromState:(id<SearchStrategyDelegate>)state {
+	NSParameterAssert(state);
+	NSArray *moves = [state legalMoves];
+    
+	NSUInteger idx = random() % moves.count;
+	return [moves objectAtIndex:idx];
 }
 
 @end
