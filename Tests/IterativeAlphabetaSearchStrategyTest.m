@@ -72,4 +72,15 @@
     STAssertEquals(copy.timeInterval, searcher.timeInterval, nil);
 }
 
+- (void)testCoding {
+    searcher.timeInterval = random();
+    
+    NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"coding.data"];
+    [NSKeyedArchiver archiveRootObject:searcher toFile:path];
+    
+    id unarchived = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    STAssertEqualObjects(unarchived, searcher, nil);
+    STAssertNotNil(unarchived, nil);
+}
+
 @end

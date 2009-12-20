@@ -26,6 +26,12 @@
 
 #pragma mark -
 
+- (BOOL)isEqual:(id)object {
+    return [self isMemberOfClass:[object class]];
+}    
+
+#pragma mark -
+
 - (id)moveFromState:(id<SearchStrategyDelegate>)state {
 	NSParameterAssert(state);
 	NSArray *moves = [state legalMoves];

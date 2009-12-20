@@ -13,14 +13,22 @@
 
 @implementation RandomSearchStrategyTest
 
+- (void)setUp {
+    strategy = [RandomSearchStrategy new];
+}
+
+- (void)tearDown {
+    [strategy release];
+}
+
+#pragma mark -
+
 - (NSInteger)searchCount {
     return 1e4;
 }    
 
 - (void)testRandomSearch {
-    RandomStub *stub = [[RandomStub new] autorelease];
-    RandomSearchStrategy *strategy = [[RandomSearchStrategy new] autorelease];
-    
+    RandomStub *stub = [[RandomStub new] autorelease];    
     
     NSCountedSet *set = [NSCountedSet new];
     for (int i = 0; i < [self searchCount]; i++) {
@@ -36,10 +44,20 @@
     }
 }
 
+#pragma mark -
+
 - (void)testCopy {
-    RandomSearchStrategy *strategy = [[RandomSearchStrategy new] autorelease];
     RandomSearchStrategy *copy = [[strategy copy] autorelease];
     STAssertEqualObjects(copy, strategy, nil);
+}
+
+- (void)testCoding {
+    NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"coding.data"];
+    [NSKeyedArchiver archiveRootObject:strategy toFile:path];
+    
+    id unarchived = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    STAssertEqualObjects(unarchived, strategy, nil);
+    STAssertNotNil(unarchived, nil);
 }
 
 @end

@@ -21,7 +21,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeInteger:self.timeInterval forKey:@"timeInterval"];
+    [aCoder encodeDouble:self.timeInterval forKey:@"timeInterval"];
 }
 
 #pragma mark -

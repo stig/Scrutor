@@ -8,7 +8,10 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
+@class RandomSearchStrategy;
+
 @interface RandomSearchStrategyTest : SenTestCase {
+    RandomSearchStrategy *strategy;
 }
 
 @end

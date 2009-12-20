@@ -74,4 +74,15 @@
     STAssertEquals(copy.maxPly, searcher.maxPly, nil);
 }
 
+- (void)testCoding {
+    searcher.maxPly = random();
+
+    NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"coding.data"];
+    [NSKeyedArchiver archiveRootObject:searcher toFile:path];
+    
+    id unarchived = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    STAssertEqualObjects(unarchived, searcher, nil);
+    STAssertNotNil(unarchived, nil);
+}
+
 @end
