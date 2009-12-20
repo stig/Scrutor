@@ -30,6 +30,12 @@
 		BC72D8B610DE519F0066B1B8 /* SingleMoveOptimisationDecorator.h in Headers */ = {isa = PBXBuildFile; fileRef = BC72D8B410DE519F0066B1B8 /* SingleMoveOptimisationDecorator.h */; };
 		BC72D8B710DE519F0066B1B8 /* SingleMoveOptimisationDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D8B510DE519F0066B1B8 /* SingleMoveOptimisationDecorator.m */; };
 		BC72D8BA10DE53280066B1B8 /* SingleMoveOptimisationDecoratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D8B910DE53280066B1B8 /* SingleMoveOptimisationDecoratorTest.m */; };
+		BC72D8F610DE57AE0066B1B8 /* AbstractDecorator.h in Headers */ = {isa = PBXBuildFile; fileRef = BC72D8F510DE57AE0066B1B8 /* AbstractDecorator.h */; };
+		BC72D8F810DE57AE0066B1B8 /* AbstractDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D8F710DE57AE0066B1B8 /* AbstractDecorator.m */; };
+		BC72D91010DE632C0066B1B8 /* CopyStateDecorator.h in Headers */ = {isa = PBXBuildFile; fileRef = BC72D90E10DE632C0066B1B8 /* CopyStateDecorator.h */; };
+		BC72D91110DE632C0066B1B8 /* CopyStateDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D90F10DE632C0066B1B8 /* CopyStateDecorator.m */; };
+		BC72D91610DE6C350066B1B8 /* CopyStateDecoratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D91510DE6C350066B1B8 /* CopyStateDecoratorTest.m */; };
+		BC72D92C10DE70540066B1B8 /* SingleMoveStub.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D92B10DE70540066B1B8 /* SingleMoveStub.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +82,14 @@
 		BC72D8B510DE519F0066B1B8 /* SingleMoveOptimisationDecorator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMoveOptimisationDecorator.m; sourceTree = "<group>"; };
 		BC72D8B810DE53280066B1B8 /* SingleMoveOptimisationDecoratorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMoveOptimisationDecoratorTest.h; sourceTree = "<group>"; };
 		BC72D8B910DE53280066B1B8 /* SingleMoveOptimisationDecoratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMoveOptimisationDecoratorTest.m; sourceTree = "<group>"; };
+		BC72D8F510DE57AE0066B1B8 /* AbstractDecorator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractDecorator.h; sourceTree = "<group>"; };
+		BC72D8F710DE57AE0066B1B8 /* AbstractDecorator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractDecorator.m; sourceTree = "<group>"; };
+		BC72D90E10DE632C0066B1B8 /* CopyStateDecorator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CopyStateDecorator.h; sourceTree = "<group>"; };
+		BC72D90F10DE632C0066B1B8 /* CopyStateDecorator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CopyStateDecorator.m; sourceTree = "<group>"; };
+		BC72D91410DE6C350066B1B8 /* CopyStateDecoratorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CopyStateDecoratorTest.h; sourceTree = "<group>"; };
+		BC72D91510DE6C350066B1B8 /* CopyStateDecoratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CopyStateDecoratorTest.m; sourceTree = "<group>"; };
+		BC72D92A10DE70540066B1B8 /* SingleMoveStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMoveStub.h; sourceTree = "<group>"; };
+		BC72D92B10DE70540066B1B8 /* SingleMoveStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMoveStub.m; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libScrutor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libScrutor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -141,8 +155,12 @@
 				BC72D68B10DD768C0066B1B8 /* AlphabetaSearchStrategy.m */,
 				BC72D6C010DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.h */,
 				BC72D6C110DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.m */,
+				BC72D8F510DE57AE0066B1B8 /* AbstractDecorator.h */,
+				BC72D8F710DE57AE0066B1B8 /* AbstractDecorator.m */,
 				BC72D8B410DE519F0066B1B8 /* SingleMoveOptimisationDecorator.h */,
 				BC72D8B510DE519F0066B1B8 /* SingleMoveOptimisationDecorator.m */,
+				BC72D90E10DE632C0066B1B8 /* CopyStateDecorator.h */,
+				BC72D90F10DE632C0066B1B8 /* CopyStateDecorator.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -158,14 +176,7 @@
 		BC72D5CB10DD60D80066B1B8 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				BC72D60D10DD647B0066B1B8 /* AbstractStub.h */,
-				BC72D60E10DD647B0066B1B8 /* AbstractStub.m */,
-				BC72D61C10DD66640066B1B8 /* RandomStub.h */,
-				BC72D61D10DD66640066B1B8 /* RandomStub.m */,
-				BC72D61910DD65750066B1B8 /* NegamaxStub.h */,
-				BC72D61A10DD65750066B1B8 /* NegamaxStub.m */,
-				BC72D6B210DD8DEC0066B1B8 /* IterativeStub.h */,
-				BC72D6B310DD8DEC0066B1B8 /* IterativeStub.m */,
+				BC72D92910DE702D0066B1B8 /* Stubs */,
 				BC72D62B10DD67E90066B1B8 /* RandomSearchStrategyTest.h */,
 				BC72D62C10DD67E90066B1B8 /* RandomSearchStrategyTest.m */,
 				BC72D64E10DD70C60066B1B8 /* NegamaxSearchStrategyTest.h */,
@@ -176,8 +187,27 @@
 				BC72D6BE10DD8F350066B1B8 /* IterativeAlphabetaSearchStrategyTest.m */,
 				BC72D8B810DE53280066B1B8 /* SingleMoveOptimisationDecoratorTest.h */,
 				BC72D8B910DE53280066B1B8 /* SingleMoveOptimisationDecoratorTest.m */,
+				BC72D91410DE6C350066B1B8 /* CopyStateDecoratorTest.h */,
+				BC72D91510DE6C350066B1B8 /* CopyStateDecoratorTest.m */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		BC72D92910DE702D0066B1B8 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				BC72D60D10DD647B0066B1B8 /* AbstractStub.h */,
+				BC72D60E10DD647B0066B1B8 /* AbstractStub.m */,
+				BC72D61C10DD66640066B1B8 /* RandomStub.h */,
+				BC72D61D10DD66640066B1B8 /* RandomStub.m */,
+				BC72D61910DD65750066B1B8 /* NegamaxStub.h */,
+				BC72D61A10DD65750066B1B8 /* NegamaxStub.m */,
+				BC72D6B210DD8DEC0066B1B8 /* IterativeStub.h */,
+				BC72D6B310DD8DEC0066B1B8 /* IterativeStub.m */,
+				BC72D92A10DE70540066B1B8 /* SingleMoveStub.h */,
+				BC72D92B10DE70540066B1B8 /* SingleMoveStub.m */,
+			);
+			name = Stubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +224,8 @@
 				BC72D68C10DD768C0066B1B8 /* AlphabetaSearchStrategy.h in Headers */,
 				BC72D6C210DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.h in Headers */,
 				BC72D8B610DE519F0066B1B8 /* SingleMoveOptimisationDecorator.h in Headers */,
+				BC72D8F610DE57AE0066B1B8 /* AbstractDecorator.h in Headers */,
+				BC72D91010DE632C0066B1B8 /* CopyStateDecorator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +327,8 @@
 				BC72D6B410DD8DEC0066B1B8 /* IterativeStub.m in Sources */,
 				BC72D6BF10DD8F350066B1B8 /* IterativeAlphabetaSearchStrategyTest.m in Sources */,
 				BC72D8BA10DE53280066B1B8 /* SingleMoveOptimisationDecoratorTest.m in Sources */,
+				BC72D91610DE6C350066B1B8 /* CopyStateDecoratorTest.m in Sources */,
+				BC72D92C10DE70540066B1B8 /* SingleMoveStub.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +341,8 @@
 				BC72D68D10DD768C0066B1B8 /* AlphabetaSearchStrategy.m in Sources */,
 				BC72D6C310DD8F4B0066B1B8 /* IterativeAlphabetaSearchStrategy.m in Sources */,
 				BC72D8B710DE519F0066B1B8 /* SingleMoveOptimisationDecorator.m in Sources */,
+				BC72D8F810DE57AE0066B1B8 /* AbstractDecorator.m in Sources */,
+				BC72D91110DE632C0066B1B8 /* CopyStateDecorator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

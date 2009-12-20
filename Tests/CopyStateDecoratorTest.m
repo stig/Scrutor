@@ -1,24 +1,24 @@
 //
-//  SingleMoveOptimisationDecoratorTest.m
+//  CopyStateDecoratorTest.m
 //  Scrutor
 //
 //  Created by Hubbie on 20/12/2009.
 //  Copyright 2009 Stig Brautaset. All rights reserved.
 //
 
-#import "SingleMoveOptimisationDecoratorTest.h"
+#import "CopyStateDecoratorTest.h"
 
-#import "SingleMoveOptimisationDecorator.h"
+#import "CopyStateDecorator.h"
 #import "AlphabetaSearchStrategy.h"
-#import "SingleMoveStub.h"
+#import "NegamaxStub.h"
 
-@implementation SingleMoveOptimisationDecoratorTest
+@implementation CopyStateDecoratorTest
 
-- (void)setUp {    
+- (void)setUp {
     AlphabetaSearchStrategy *underlyingStrategy = [AlphabetaSearchStrategy new];
     underlyingStrategy.maxPly = 3u;
     
-    strategy = [SingleMoveOptimisationDecorator new];
+    strategy = [CopyStateDecorator new];
     strategy.underlyingStrategy = [underlyingStrategy autorelease];
 }
 
@@ -29,18 +29,19 @@
 #pragma mark -
 
 - (void)testDecorator {
-    SingleMoveStub *stub = [[SingleMoveStub new] autorelease];
-
+    NegamaxStub *stub = [[NegamaxStub new] autorelease];
+    
     id move;
     STAssertNoThrow(move = [strategy moveFromState:stub], nil);
-    STAssertEqualObjects(move, @"A", nil);
-    STAssertEquals(stub.callCount, 1u, nil);
+    STAssertEqualObjects(move, @"B", nil);
+    STAssertEquals(stub.countOfVisited, 0u, nil);
+    STAssertEquals(stub.maxPlyVisited, 0u, nil);
 }
 
 #pragma mark -
 
 - (void)testCopy {
-    SingleMoveOptimisationDecorator *copy = [strategy copy];
+    CopyStateDecorator *copy = [strategy copy];
     STAssertEqualObjects(copy, strategy, nil);
     STAssertEqualObjects(copy.underlyingStrategy, strategy.underlyingStrategy, nil);
 }

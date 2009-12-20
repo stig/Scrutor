@@ -1,33 +1,39 @@
 //
-//  RandomStub.m
+//  SingleMoveStub.m
 //  Scrutor
 //
-//  Created by Hubbie on 19/12/2009.
+//  Created by Hubbie on 20/12/2009.
 //  Copyright 2009 Stig Brautaset. All rights reserved.
 //
 
-#import "RandomStub.h"
+#import "SingleMoveStub.h"
 
 
-@implementation RandomStub
+@implementation SingleMoveStub
+
+@synthesize callCount = _callCount;
 
 - (id)copyWithZone:(NSZone *)zone {
     return [self retain];
 }
 
 - (NSArray*)legalMoves {
-    return [@"A B C D E F G H I J K L M N O P Q R S T U V W X Y Z" componentsSeparatedByString:@" "];
+    _callCount++;
+    return [NSArray arrayWithObject:@"A"];
 }        
 
 - (NSInteger)fitness {
+    _callCount++;
     @throw @"fitness";
 }
 
 - (void)performLegalMove:(id)move {
+    _callCount++;
     @throw @"performMove";
 }
 
 - (void)undoLegalMove:(id)move {
+    _callCount++;
     @throw @"undoMove";
 }    
 

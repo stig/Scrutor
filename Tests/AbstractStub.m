@@ -10,11 +10,28 @@
 
 @implementation AbstractStub
 
+@synthesize path = _path;
+@synthesize countOfVisited = _countOfVisited;
+@synthesize maxPlyVisited = _maxPlyVisited;
+
+#pragma mark -
+
 - (id)init {
     if (self = [super init])
         self.path = @"";
     return self;
 }
+
+#pragma mark -
+
+- (id)copyWithZone:(NSZone *)zone {
+    AbstractStub *copy = [[self class] new];
+    copy.path = self.path;
+    copy->_tree = [_tree copy];
+    return copy;
+}
+
+#pragma mark -
 
 - (NSArray*)candidates {
     return [@"A B C" componentsSeparatedByString:@" "];
@@ -29,16 +46,11 @@
             [moves addObject:m];
     
     }
-
-//    NSLog(@"Path: %@, Moves: %@", self.path, moves);
     
     return moves;
 }
 
-- (void)performLegalMove:(id)move {
-
-//    NSLog(@"Path: %@, Move: %@", self.path, move);
-    
+- (void)performLegalMove:(id)move {    
     _countOfVisited++;
     self.path = [self.path stringByAppendingPathComponent:move];
     
@@ -51,15 +63,7 @@
 }
 
 - (NSInteger)fitness {
-    NSInteger fitness = [[_tree objectForKey:self.path] integerValue];
-    
-//    NSLog(@"Path: %@, Fitness: %d", self.path, fitness);
-    
-    return fitness;
+    return [[_tree objectForKey:self.path] integerValue];
 }
-
-@synthesize path = _path;
-@synthesize countOfVisited = _countOfVisited;
-@synthesize maxPlyVisited = _maxPlyVisited;
 
 @end

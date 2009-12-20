@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@protocol SearchStrategyDelegate < NSObject >
+@protocol SearchStrategyDelegate < NSObject, NSCopying >
 
 - (void)performLegalMove:(id)move;
 - (void)undoLegalMove:(id)move;

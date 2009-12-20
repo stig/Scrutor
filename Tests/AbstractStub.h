@@ -16,7 +16,6 @@
 
     NSUInteger _maxPlyVisited;
     NSUInteger _countOfVisited;
-
 }
 
 @property (copy) NSString *path;
