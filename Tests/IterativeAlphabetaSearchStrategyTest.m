@@ -55,8 +55,10 @@
     STAssertFalse(searcher.foundEnd, @"Did not reach end in all paths");
     
     // Verify that a plain AlphaBeta to the highest completed level finds the same best move.
+    AlphabetaSearchStrategy *ab = [[AlphabetaSearchStrategy new] autorelease];
+
     // Subtract 1 from the maxPlyVisited because that is the highest attempted level.
-    AlphabetaSearchStrategy *ab = [[[AlphabetaSearchStrategy alloc] initWithMaxPly:stub.maxPlyVisited-1] autorelease];
+    ab.maxPly = stub.maxPlyVisited - 1;
     id move2 = [ab moveFromState:stub];
     STAssertEqualObjects(move, move2, nil);
 }

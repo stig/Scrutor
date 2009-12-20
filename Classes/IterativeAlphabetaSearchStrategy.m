@@ -30,7 +30,7 @@
     if (![self isMemberOfClass:[object class]])
         return NO;
     IterativeAlphabetaSearchStrategy *o = object;
-    return _timeInterval == o->_timeInterval;
+    return _timeInterval == o.timeInterval;
 }
 
 #pragma mark -
@@ -89,7 +89,7 @@
 - (id)moveFromState:(id<SearchStrategyDelegate>)state {
 	NSParameterAssert(state);
     
-    _cutOffDate = [NSDate dateWithTimeIntervalSinceNow:_timeInterval * 0.95];
+    _cutOffDate = [NSDate dateWithTimeIntervalSinceNow:self.timeInterval * 0.95];
     
     id bestMove = nil;
     NSArray *moves = [state legalMoves];

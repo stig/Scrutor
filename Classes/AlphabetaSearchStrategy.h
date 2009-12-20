@@ -13,6 +13,6 @@
     NSUInteger _maxPly;
 }
 
-- (id)initWithMaxPly:(NSUInteger)maxPly_;
+@property NSUInteger maxPly;
 
 @end

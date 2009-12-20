@@ -15,21 +15,18 @@
 
 - (void)setUp {
     stub = [NegamaxStub new];
+    searcher = [AlphabetaSearchStrategy new];
 }
 
 - (void)tearDown {
     [stub release];
+    [searcher release];
 }
 
 #pragma mark -
 
-- (void)testIllegalMaxPly {
-    STAssertThrows([AlphabetaSearchStrategy new], nil);
-	STAssertThrows([[AlphabetaSearchStrategy alloc] initWithMaxPly:0], nil);
-}
-
 - (void)testMaxPly1 {
-    AlphabetaSearchStrategy *searcher = [[[AlphabetaSearchStrategy alloc] initWithMaxPly:1] autorelease];
+    searcher.maxPly = 1;
     id move = [searcher moveFromState:stub];
     STAssertEqualObjects(move, @"A", nil);
     STAssertEquals(stub.countOfVisited, 2u, nil);
@@ -37,7 +34,7 @@
 }
 
 - (void)testMaxPly2 {
-    AlphabetaSearchStrategy *searcher = [[[AlphabetaSearchStrategy alloc] initWithMaxPly:2] autorelease];
+    searcher.maxPly = 2;
     id move = [searcher moveFromState:stub];
     STAssertEqualObjects(move, @"A", nil);
     STAssertEquals(stub.countOfVisited, 5u, nil);
@@ -45,7 +42,7 @@
 }
 
 - (void)testMaxPly3 {
-    AlphabetaSearchStrategy *searcher = [[[AlphabetaSearchStrategy alloc] initWithMaxPly:3] autorelease];
+    searcher.maxPly = 3;
     id move = [searcher moveFromState:stub];
     STAssertEqualObjects(move, @"B", nil);
     STAssertEquals(stub.countOfVisited, 13u, nil);
@@ -53,7 +50,7 @@
 }
 
 - (void)testMaxPly4 {
-    AlphabetaSearchStrategy *searcher = [[[AlphabetaSearchStrategy alloc] initWithMaxPly:4] autorelease];
+    searcher.maxPly = 4;
     id move = [searcher moveFromState:stub];
     STAssertEqualObjects(move, @"A", nil);
     STAssertEquals(stub.countOfVisited, 26u, nil);
@@ -61,7 +58,7 @@
 }
 
 - (void)testMaxPly5 {
-    AlphabetaSearchStrategy *searcher = [[[AlphabetaSearchStrategy alloc] initWithMaxPly:5] autorelease];
+    searcher.maxPly = 5;
     id move = [searcher moveFromState:stub];
     STAssertEqualObjects(move, @"B", nil);
     STAssertEquals(stub.countOfVisited, 56u, nil);

@@ -9,9 +9,11 @@
 #import <SenTestingKit/SenTestingKit.h>
 
 @class NegamaxStub;
+@class NegamaxSearchStrategy;
 
 @interface NegamaxSearchStrategyTest : SenTestCase {
     NegamaxStub *stub;
+    NegamaxSearchStrategy *searcher;
 }
 
 @end

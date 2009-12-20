@@ -11,30 +11,17 @@
 
 @implementation NegamaxSearchStrategy
 
-- (id)init {
-    @throw [NSException exceptionWithName:@"InvalidInitialiser" reason:@"Use initWithMaxPly:" userInfo:nil];
-}
-
-- (id)initWithMaxPly:(NSUInteger)maxPly_ {
-    if (!maxPly_)
-        @throw [NSException exceptionWithName:@"InvalidMaxPly" reason:@"" userInfo:nil];
-    
-	self = [super init];
-	if (self) {
-		_maxPly = maxPly_;
-	}
-	return self;
-}
+@synthesize maxPly = _maxPly;
 
 #pragma mark -
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-    NSInteger maxPly = [aDecoder decodeIntegerForKey:@"maxPly"];
-    return [self initWithMaxPly:maxPly];
+    self.maxPly = [aDecoder decodeIntegerForKey:@"maxPly"];
+    return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeInteger:_maxPly forKey:@"maxPly"];
+    [aCoder encodeInteger:self.maxPly forKey:@"maxPly"];
 }
 
 #pragma mark -
@@ -43,7 +30,7 @@
     if (![self isMemberOfClass:[object class]])
         return NO;
     NegamaxSearchStrategy *o = object;
-    return _maxPly == o->_maxPly;
+    return _maxPly == o.maxPly;
 }    
 
 #pragma mark -
@@ -80,7 +67,7 @@
         NSAutoreleasePool *pool = [NSAutoreleasePool new];        
         [state performLegalMove:m];
         
-        NSInteger sc = -[self fitnessWithState:state plyLeft:_maxPly-1];
+        NSInteger sc = -[self fitnessWithState:state plyLeft:self.maxPly-1];
         
         if (sc > best) {
             best = sc;
