@@ -32,8 +32,7 @@
 
 #import "CopyStateDecoratorTest.h"
 
-#import "CopyStateDecorator.h"
-#import "AlphabetaSearchStrategy.h"
+#import "Scrutor.h"
 #import "NegamaxStub.h"
 
 @implementation CopyStateDecoratorTest

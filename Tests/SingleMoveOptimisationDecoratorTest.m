@@ -32,8 +32,7 @@
 
 #import "SingleMoveOptimisationDecoratorTest.h"
 
-#import "SingleMoveOptimisationDecorator.h"
-#import "AlphabetaSearchStrategy.h"
+#import "Scrutor.h"
 #import "SingleMoveStub.h"
 
 @implementation SingleMoveOptimisationDecoratorTest

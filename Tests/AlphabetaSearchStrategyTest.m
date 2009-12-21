@@ -33,7 +33,7 @@
 #import "AlphabetaSearchStrategyTest.h"
 
 #import "NegamaxStub.h"
-#import "AlphabetaSearchStrategy.h"
+#import "Scrutor.h"
 
 @implementation AlphabetaSearchStrategyTest
 

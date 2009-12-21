@@ -32,7 +32,7 @@
 
 #import "RandomSearchStrategyTest.h"
 
-#import "RandomSearchStrategy.h"
+#import "Scrutor.h"
 #import "RandomStub.h"
 
 @implementation RandomSearchStrategyTest

@@ -36,6 +36,7 @@
 		BC72D91110DE632C0066B1B8 /* CopyStateDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D90F10DE632C0066B1B8 /* CopyStateDecorator.m */; };
 		BC72D91610DE6C350066B1B8 /* CopyStateDecoratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D91510DE6C350066B1B8 /* CopyStateDecoratorTest.m */; };
 		BC72D92C10DE70540066B1B8 /* SingleMoveStub.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D92B10DE70540066B1B8 /* SingleMoveStub.m */; };
+		BC9ABB6410DF614500E03758 /* Scrutor.h in Headers */ = {isa = PBXBuildFile; fileRef = BC9ABB6310DF614500E03758 /* Scrutor.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		BC72D91510DE6C350066B1B8 /* CopyStateDecoratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CopyStateDecoratorTest.m; sourceTree = "<group>"; };
 		BC72D92A10DE70540066B1B8 /* SingleMoveStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMoveStub.h; sourceTree = "<group>"; };
 		BC72D92B10DE70540066B1B8 /* SingleMoveStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMoveStub.m; sourceTree = "<group>"; };
+		BC9ABB6310DF614500E03758 /* Scrutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scrutor.h; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libScrutor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libScrutor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -146,6 +148,7 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BC9ABB6310DF614500E03758 /* Scrutor.h */,
 				BC72D94610DE757C0066B1B8 /* Decorator */,
 				BC72D5D310DD62610066B1B8 /* SearchStrategy.h */,
 				BC72D5E210DD633F0066B1B8 /* RandomSearchStrategy.h */,
@@ -234,6 +237,7 @@
 				BC72D8B610DE519F0066B1B8 /* SingleMoveOptimisationDecorator.h in Headers */,
 				BC72D8F610DE57AE0066B1B8 /* AbstractDecorator.h in Headers */,
 				BC72D91010DE632C0066B1B8 /* CopyStateDecorator.h in Headers */,
+				BC9ABB6410DF614500E03758 /* Scrutor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

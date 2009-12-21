@@ -34,8 +34,7 @@
 
 #import "NegamaxStub.h"
 #import "IterativeStub.h"
-#import "IterativeAlphabetaSearchStrategy.h"
-#import "AlphabetaSearchStrategy.h"
+#import "Scrutor.h"
 
 @implementation IterativeAlphabetaSearchStrategyTest
 
