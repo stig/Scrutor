@@ -119,7 +119,7 @@
 - (id)moveFromState:(id<SearchStrategyDelegate>)state {
 	NSParameterAssert(state);
     
-    _cutOffDate = [NSDate dateWithTimeIntervalSinceNow:self.timeInterval * 0.95];
+    _cutOffDate = [NSDate dateWithTimeIntervalSinceNow:self.timeInterval * 0.9];
     
     id bestMove = nil;
     NSArray *moves = [state legalMoves];
