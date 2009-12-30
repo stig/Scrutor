@@ -55,7 +55,7 @@
     NegamaxStub *stub = [[NegamaxStub new] autorelease];
     
     id move;
-    STAssertNoThrow(move = [strategy moveFromState:stub], nil);
+    STAssertNoThrow(move = [strategy moveFromNode:stub], nil);
     STAssertEqualObjects(move, @"B", nil);
     STAssertEquals(stub.countOfVisited, 0u, nil);
     STAssertEquals(stub.maxPlyVisited, 0u, nil);

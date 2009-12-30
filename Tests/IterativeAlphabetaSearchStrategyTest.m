@@ -53,7 +53,7 @@
     strategy.timeInterval = 10.0; // Allow many seconds.
     
     NSDate *start = [NSDate date];
-    id move = [strategy moveFromState:stub];
+    id move = [strategy moveFromNode:stub];
     NSTimeInterval duration = -[start timeIntervalSinceNow];
     
     STAssertTrue(duration < 0.1, @"Duration was %f", duration);
@@ -68,7 +68,7 @@
     strategy.timeInterval = 0.1;
 
     NSDate *start = [NSDate date];
-    id move = [strategy moveFromState:stub];
+    id move = [strategy moveFromNode:stub];
     NSTimeInterval duration = -[start timeIntervalSinceNow];
     
     STAssertNotNil(move, nil);
@@ -82,7 +82,7 @@
 
     // Subtract 1 from the maxPlyVisited because that is the highest attempted level.
     ab.maxPly = stub.maxPlyVisited - 1;
-    id move2 = [ab moveFromState:stub];
+    id move2 = [ab moveFromNode:stub];
     STAssertEqualObjects(move, move2, nil);
 }
 

@@ -92,7 +92,7 @@
 }
 
 
-- (id)moveFromState:(id<SBGameTreeNode>)state {
+- (id)moveFromNode:(id<SBGameTreeNode>)state {
 	NSParameterAssert(state);
     
     id bestMove = nil;

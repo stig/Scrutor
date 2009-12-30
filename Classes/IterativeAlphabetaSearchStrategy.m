@@ -116,7 +116,7 @@
     return moves2;
 }
 
-- (id)moveFromState:(id<SBGameTreeNode>)state {
+- (id)moveFromNode:(id<SBGameTreeNode>)state {
 	NSParameterAssert(state);
     
     _cutOffDate = [NSDate dateWithTimeIntervalSinceNow:self.timeInterval * 0.9];

@@ -42,9 +42,10 @@
 @protocol SBGameTreeSearch < NSObject >
 
 /**
- Returns the best move found for this state.
+ Should be implemented to return the best move found from the given
+ node, according to the strategy of the concrete implementation.
  */
-- (id)moveFromState:(id<SBGameTreeNode>)state;
+- (id)moveFromNode:(id<SBGameTreeNode>)node;
 
 
 @end

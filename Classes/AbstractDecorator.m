@@ -66,7 +66,7 @@
 
 #pragma mark -
 
-- (id)moveFromState:(id<SBGameTreeNode>)state {
+- (id)moveFromNode:(id<SBGameTreeNode>)state {
     NSAssert1(0, @"You must override %s in your decorator subclass", _cmd);
 }
 

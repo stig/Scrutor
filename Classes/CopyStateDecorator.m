@@ -35,9 +35,9 @@
 
 @implementation CopyStateDecorator
 
-- (id)moveFromState:(id<SBGameTreeNode>)delegate {
+- (id)moveFromNode:(id<SBGameTreeNode>)delegate {
     id copy = [(id)delegate copy];
-    id move = [self.underlyingStrategy moveFromState:copy];
+    id move = [self.underlyingStrategy moveFromNode:copy];
     [copy release];
     return move;
 }
