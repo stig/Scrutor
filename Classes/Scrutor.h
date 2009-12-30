@@ -41,9 +41,9 @@
 
 #import "SBGameTreeNode.h"
 #import "SBGameTreeSearch.h"
-#import "RandomSearchStrategy.h"
-#import "NegamaxSearchStrategy.h"
-#import "AlphabetaSearchStrategy.h"
+#import "SBRandomSearch.h"
+#import "SBNegamaxSearch.h"
+#import "SBAlphabetaSearch.h"
 #import "IterativeAlphabetaSearchStrategy.h"
 
 #import "AbstractDecorator.h"

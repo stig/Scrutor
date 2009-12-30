@@ -34,19 +34,23 @@
 #import "SBGameTreeSearch.h"
 
 /**
- @brief Negamax with Alphabeta pruning.
-
- A strategy implementing Negamax with Alpha-beta pruning.
+ @brief The basic Negamax algorithm.
  
- @see http://en.wikipedia.org/wiki/Alpha-beta_pruning
+ A strategy implementing the basic Negamax algorithm. You will almost
+ certainly want to use the AlphabetaSearchStrategy implementation instead. 
+ It should be (much) faster and produce exactly the same results in all
+ cases. This exists mainly because it is very simple, and is used by
+ tests to verify that the Alphabeta pruning works correctly.
+ 
+ @see http://en.wikipedia.org/wiki/Negamax
  */
-@interface AlphabetaSearchStrategy : NSObject < SBGameTreeSearch > {
+@interface SBNegamaxSearch : NSObject < SBGameTreeSearch > {
 @private
     NSUInteger _maxPly;
 }
 
 /**
- The maximum ply (depth) to search to.
+ The maximum ply for searching.
  */
 @property NSUInteger maxPly;
 

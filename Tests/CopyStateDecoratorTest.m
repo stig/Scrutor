@@ -38,7 +38,7 @@
 @implementation CopyStateDecoratorTest
 
 - (void)setUp {
-    AlphabetaSearchStrategy *underlyingStrategy = [AlphabetaSearchStrategy new];
+    SBAlphabetaSearch *underlyingStrategy = [SBAlphabetaSearch new];
     underlyingStrategy.maxPly = 3u;
     
     strategy = [CopyStateDecorator new];

@@ -30,58 +30,24 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "RandomSearchStrategyTest.h"
+#import <Foundation/Foundation.h>
+#import "SBGameTreeSearch.h"
 
-#import "Scrutor.h"
-#import "RandomStub.h"
+/**
+ @brief Negamax with Alphabeta pruning.
 
-@implementation RandomSearchStrategyTest
-
-- (void)setUp {
-    strategy = [RandomSearchStrategy new];
+ A strategy implementing Negamax with Alpha-beta pruning.
+ 
+ @see http://en.wikipedia.org/wiki/Alpha-beta_pruning
+ */
+@interface SBAlphabetaSearch : NSObject < SBGameTreeSearch > {
+@private
+    NSUInteger _maxPly;
 }
 
-- (void)tearDown {
-    [strategy release];
-}
-
-#pragma mark -
-
-- (NSInteger)searchCount {
-    return 1e4;
-}    
-
-- (void)testRandomSearch {
-    RandomStub *stub = [[RandomStub new] autorelease];    
-    
-    NSCountedSet *set = [NSCountedSet new];
-    for (int i = 0; i < [self searchCount]; i++) {
-        NSString *move = [strategy moveFromState:stub];
-        [set addObject:move];
-    }
-
-    STAssertEquals(set.count, 26u, nil);
-    NSUInteger expect = [self searchCount] / 26;
-    for (NSString *move in set) {
-        NSUInteger count = [set countForObject:move];
-        STAssertEqualsWithAccuracy(count, expect, expect * 0.15, nil);
-    }
-}
-
-#pragma mark -
-
-- (void)testCopy {
-    RandomSearchStrategy *copy = [[strategy copy] autorelease];
-    STAssertEqualObjects(copy, strategy, nil);
-}
-
-- (void)testCoding {
-    NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"coding.data"];
-    [NSKeyedArchiver archiveRootObject:strategy toFile:path];
-    
-    id unarchived = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-    STAssertEqualObjects(unarchived, strategy, nil);
-    STAssertNotNil(unarchived, nil);
-}
+/**
+ The maximum ply (depth) to search to.
+ */
+@property NSUInteger maxPly;
 
 @end

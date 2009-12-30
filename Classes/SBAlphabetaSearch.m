@@ -30,10 +30,10 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "NegamaxSearchStrategy.h"
+#import "SBAlphabetaSearch.h"
 
 
-@implementation NegamaxSearchStrategy
+@implementation SBAlphabetaSearch
 
 @synthesize maxPly = _maxPly;
 
@@ -51,7 +51,7 @@
 #pragma mark -
 
 - (id)copyWithZone:(NSZone *)zone {
-    NegamaxSearchStrategy *copy = [[self class] new];
+    SBAlphabetaSearch *copy = [[self class] new];
     copy.maxPly = self.maxPly;
     return copy;
 }
@@ -59,13 +59,13 @@
 - (BOOL)isEqual:(id)object {
     if (![self isMemberOfClass:[object class]])
         return NO;
-    NegamaxSearchStrategy *o = object;
+    SBAlphabetaSearch *o = object;
     return _maxPly == o.maxPly;
 }    
 
 #pragma mark -
 
-- (NSInteger)fitnessWithState:(id<SBGameTreeNode>)state plyLeft:(NSUInteger)plyLeft {
+- (NSInteger)fitnessWithState:(id<SBGameTreeNode>)state alpha:(NSInteger)alpha beta:(NSInteger)beta plyLeft:(NSUInteger)plyLeft {
 	NSParameterAssert(state);
     
 	if (!plyLeft)
@@ -75,32 +75,36 @@
     if (!moves.count)
         return [state fitness];
     
-    NSInteger best = INT_MIN;
     for (id m in moves) {
         [state performLegalMove:m];
         
-        NSInteger sc = -[self fitnessWithState:state plyLeft:plyLeft-1];
-        if (sc > best)
-            best = sc;
+        NSInteger sc = -[self fitnessWithState:state alpha:-beta beta:-alpha plyLeft:plyLeft-1];
+        if (sc > alpha)
+            alpha = sc;
         
         [state undoLegalMove:m];
+        
+        if (beta != INT_MIN && alpha > beta)
+            break;
     }
-    return best;
+    
+    return alpha;
 }
+
 
 - (id)moveFromState:(id<SBGameTreeNode>)state {
 	NSParameterAssert(state);
     
     id bestMove = nil;
-    NSInteger best = INT_MIN;
+    NSInteger alpha = INT_MIN;
+    
     for (id m in [state legalMoves]) {
-        NSAutoreleasePool *pool = [NSAutoreleasePool new];        
+        NSAutoreleasePool *pool = [NSAutoreleasePool new];
         [state performLegalMove:m];
         
-        NSInteger sc = -[self fitnessWithState:state plyLeft:self.maxPly-1];
-        
-        if (sc > best) {
-            best = sc;
+        NSInteger sc = -[self fitnessWithState:state alpha:INT_MIN beta:-alpha plyLeft:self.maxPly-1];        
+        if (sc > alpha) {
+            alpha = sc;
             bestMove = m;
         }
         
@@ -110,5 +114,6 @@
     
     return bestMove;
 }
+
 
 @end

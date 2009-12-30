@@ -33,11 +33,11 @@
 #import <SenTestingKit/SenTestingKit.h>
 
 @class NegamaxStub;
-@class NegamaxSearchStrategy;
+@class SBAlphabetaSearch;
 
-@interface NegamaxSearchStrategyTest : SenTestCase {
+@interface AlphabetaSearchTest : SenTestCase {
     NegamaxStub *stub;
-    NegamaxSearchStrategy *strategy;
+    SBAlphabetaSearch *strategy;
 }
 
 @end

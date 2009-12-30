@@ -30,16 +30,16 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "AlphabetaSearchStrategyTest.h"
+#import "AlphabetaSearchTest.h"
 
 #import "NegamaxStub.h"
 #import "Scrutor.h"
 
-@implementation AlphabetaSearchStrategyTest
+@implementation AlphabetaSearchTest
 
 - (void)setUp {
     stub = [NegamaxStub new];
-    strategy = [AlphabetaSearchStrategy new];
+    strategy = [SBAlphabetaSearch new];
 }
 
 - (void)tearDown {
@@ -93,7 +93,7 @@
 
 - (void)testCopy {
     strategy.maxPly = random();
-    AlphabetaSearchStrategy *copy = [[strategy copy] autorelease];
+    SBAlphabetaSearch *copy = [[strategy copy] autorelease];
     STAssertEqualObjects(copy, strategy, nil);
     STAssertEquals(copy.maxPly, strategy.maxPly, nil);
 }

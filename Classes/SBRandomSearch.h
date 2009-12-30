@@ -30,36 +30,14 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "RandomSearchStrategy.h"
+#import <Foundation/Foundation.h>
+#import "SBGameTreeSearch.h"
 
-
-@implementation RandomSearchStrategy
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    return [self init];
-}
-
-- (void)encodeWithCoder:(NSCoder *)aCoder {
-}
-
-#pragma mark -
-
-- (id)copyWithZone:(NSZone *)zone {
-    return [self retain];
-}
-
-- (BOOL)isEqual:(id)object {
-    return [self isMemberOfClass:[object class]];
-}    
-
-#pragma mark -
-
-- (id)moveFromState:(id<SBGameTreeNode>)state {
-	NSParameterAssert(state);
-	NSArray *moves = [state legalMoves];
-    
-	NSUInteger idx = random() % moves.count;
-	return [moves objectAtIndex:idx];
-}
-
+/**
+ @brief Pick a move at random.
+ 
+ A search strategy that simply picks one of the legal moves at random.
+ */
+@interface SBRandomSearch : NSObject < SBGameTreeSearch >
 @end
+

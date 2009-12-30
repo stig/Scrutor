@@ -30,13 +30,14 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <Foundation/Foundation.h>
-#import "SBGameTreeSearch.h"
+#import <SenTestingKit/SenTestingKit.h>
 
-/**
- @brief Pick a move at random.
- 
- A search strategy that simply picks one of the legal moves at random.
- */
-@interface RandomSearchStrategy : NSObject < SBGameTreeSearch >
+@class NegamaxStub;
+@class SBNegamaxSearch;
+
+@interface NegamaxSearchTest : SenTestCase {
+    NegamaxStub *stub;
+    SBNegamaxSearch *strategy;
+}
+
 @end

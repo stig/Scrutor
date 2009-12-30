@@ -38,7 +38,7 @@
 @implementation SingleMoveOptimisationDecoratorTest
 
 - (void)setUp {    
-    AlphabetaSearchStrategy *underlyingStrategy = [AlphabetaSearchStrategy new];
+    SBAlphabetaSearch *underlyingStrategy = [SBAlphabetaSearch new];
     underlyingStrategy.maxPly = 3u;
     
     strategy = [SingleMoveOptimisationDecorator new];

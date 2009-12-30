@@ -30,28 +30,36 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <Foundation/Foundation.h>
-#import "SBGameTreeSearch.h"
+#import "SBRandomSearch.h"
 
-/**
- @brief The basic Negamax algorithm.
- 
- A strategy implementing the basic Negamax algorithm. You will almost
- certainly want to use the AlphabetaSearchStrategy implementation instead. 
- It should be (much) faster and produce exactly the same results in all
- cases. This exists mainly because it is very simple, and is used by
- tests to verify that the Alphabeta pruning works correctly.
- 
- @see http://en.wikipedia.org/wiki/Negamax
- */
-@interface NegamaxSearchStrategy : NSObject < SBGameTreeSearch > {
-@private
-    NSUInteger _maxPly;
+
+@implementation SBRandomSearch
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    return [self init];
 }
 
-/**
- The maximum ply for searching.
- */
-@property NSUInteger maxPly;
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+}
+
+#pragma mark -
+
+- (id)copyWithZone:(NSZone *)zone {
+    return [self retain];
+}
+
+- (BOOL)isEqual:(id)object {
+    return [self isMemberOfClass:[object class]];
+}    
+
+#pragma mark -
+
+- (id)moveFromState:(id<SBGameTreeNode>)state {
+	NSParameterAssert(state);
+	NSArray *moves = [state legalMoves];
+    
+	NSUInteger idx = random() % moves.count;
+	return [moves objectAtIndex:idx];
+}
 
 @end
