@@ -59,15 +59,16 @@
  @brief Returns an array of legal moves.
  
  These will be used to translate the state into valid successor states.
- If passing is allowed in your game it is your responsibility to return a pass move from this method.
+ If passing is allowed in your game it is your responsibility to return
+ a pass move from this method.
  */
 - (NSArray*)legalMoves;
 
 /**
- @brief Return the fitness score of a particular state.
+ @brief Return the fitness score of a particular node.
  
- This should be a positive score if the state is fortuitous for the current player.
- Zero means that neither player has an advantage.
+ This should be a positive score if the node is fortuitous for the current
+ player at that level. Zero means that neither player has an advantage.
  */
 - (NSInteger)fitness;
 
