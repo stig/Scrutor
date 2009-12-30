@@ -38,6 +38,9 @@
  
  This decorator is useful to make sure we do not waste time searching
  deep into a tree if there is only a single legal move at the top level.
+ This decorator detects this case and simply returns that one move from
+ its search method. If there are more than one moves available we pass
+ through to the underlying search implementation.
  */
 @interface SingleMoveOptimisationDecorator : AbstractDecorator
 @end
