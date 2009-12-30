@@ -30,15 +30,6 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-/**
- @mainpage
- 
- Scrutor is a collection of classes implementing various game-tree search
- algorithms in Objective-C. These can be used for a variety of games, such
- as Chess, Checkers, Reversi, Go, Naughts and Crosses and more.
- 
- */
-
 #import "SBGameTreeNode.h"
 #import "SBGameTreeSearch.h"
 #import "SBRandomSearch.h"
