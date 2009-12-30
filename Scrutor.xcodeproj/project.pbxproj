@@ -14,6 +14,7 @@
 				BC886BED10EAD29F00FAA90D /* Doxygen */,
 			);
 			dependencies = (
+				BC886C9510EADAAC00FAA90D /* PBXTargetDependency */,
 			);
 			name = Documentation;
 			productName = Documentation;
@@ -68,6 +69,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = BC886BEE10EAD29F00FAA90D;
 			remoteInfo = Documentation;
+		};
+		BC886C9410EADAAC00FAA90D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = Scrutor;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -419,6 +427,11 @@
 			isa = PBXTargetDependency;
 			target = BC886BEE10EAD29F00FAA90D /* Documentation */;
 			targetProxy = BC886BF410EAD2EA00FAA90D /* PBXContainerItemProxy */;
+		};
+		BC886C9510EADAAC00FAA90D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* Scrutor */;
+			targetProxy = BC886C9410EADAAC00FAA90D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
