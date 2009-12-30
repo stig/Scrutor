@@ -31,12 +31,12 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "SearchStrategy.h"
+#import "SBGameTreeSearch.h"
 
 /**
  @brief Pick a move at random.
  
  A search strategy that simply picks one of the legal moves at random.
  */
-@interface RandomSearchStrategy : NSObject < SearchStrategy >
+@interface RandomSearchStrategy : NSObject < SBGameTreeSearch >
 @end

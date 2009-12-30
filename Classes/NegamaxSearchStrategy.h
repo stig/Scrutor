@@ -31,7 +31,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "SearchStrategy.h"
+#import "SBGameTreeSearch.h"
 
 /**
  @brief The basic Negamax algorithm.
@@ -44,7 +44,7 @@
  
  @see http://en.wikipedia.org/wiki/Negamax
  */
-@interface NegamaxSearchStrategy : NSObject < SearchStrategy > {
+@interface NegamaxSearchStrategy : NSObject < SBGameTreeSearch > {
 @private
     NSUInteger _maxPly;
 }

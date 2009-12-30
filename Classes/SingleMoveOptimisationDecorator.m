@@ -35,7 +35,7 @@
 
 @implementation SingleMoveOptimisationDecorator
 
-- (id)moveFromState:(id<SearchStrategyDelegate>)state {
+- (id)moveFromState:(id<SBGameTreeNode>)state {
     NSArray *moves = [state legalMoves];
     if (!moves.count || moves.count == 1u)
         return [moves lastObject];

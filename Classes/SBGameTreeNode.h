@@ -6,16 +6,16 @@
  modification, are permitted provided that the following conditions are
  met:
  
- Redistributions of source code must retain the above copyright notice,
- this list of conditions and the following disclaimer.
-
- Redistributions in binary form must reproduce the above copyright
- notice, this list of conditions and the following disclaimer in the
- documentation and/or other materials provided with the distribution.
+   Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+  
+   Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
  
- Neither the name of the the author nor the names of its contributors
- may be used to endorse or promote products derived from this software
- without specific prior written permission.
+   Neither the name of the the author nor the names of its contributors
+   may be used to endorse or promote products derived from this software
+   without specific prior written permission.
  
  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
  IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
@@ -32,13 +32,14 @@
 
 #import <Foundation/Foundation.h>
 
+
 /**
- @brief Protocol for states to implement.
+ @brief Protocol for game-tree nodes to implement.
  
- You must implement this protocol in your states to make them
+ You must implement this protocol in your nodes to make them
  searchable by the various search strategies provided by Scrutor.
  */
-@protocol SearchStrategyDelegate < NSObject >
+@protocol SBGameTreeNode
 
 /**
  @brief Transform the state into its successor.
@@ -72,18 +73,3 @@
 
 @end
 
-
-/**
- @brief Protocol for concrete search strategies.
- 
- You can create your own strategies implementing this protocol
- and plug them in alongside the ones provided here.
- */
-@protocol SearchStrategy < NSObject, NSCopying, NSCoding >
-
-/**
- Returns the best move found for this state.
- */
-- (id)moveFromState:(id<SearchStrategyDelegate>)state;
-
-@end

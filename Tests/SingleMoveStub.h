@@ -30,9 +30,9 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "SearchStrategy.h"
+#import "SBGameTreeSearch.h"
 
-@interface SingleMoveStub : NSObject < SearchStrategyDelegate > {
+@interface SingleMoveStub : NSObject < SBGameTreeNode > {
     NSUInteger _callCount;
 }
 

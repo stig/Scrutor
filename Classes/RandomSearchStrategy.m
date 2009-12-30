@@ -54,7 +54,7 @@
 
 #pragma mark -
 
-- (id)moveFromState:(id<SearchStrategyDelegate>)state {
+- (id)moveFromState:(id<SBGameTreeNode>)state {
 	NSParameterAssert(state);
 	NSArray *moves = [state legalMoves];
     

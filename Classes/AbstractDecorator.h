@@ -30,23 +30,23 @@
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "SearchStrategy.h"
+#import "SBGameTreeSearch.h"
 
 /**
  @brief Subclass to implement new decorators.
   
  @see http://en.wikipedia.org/wiki/Decorator_pattern
  */
-@interface AbstractDecorator : NSObject < SearchStrategy > {
+@interface AbstractDecorator : NSObject < SBGameTreeSearch > {
     
 @private
-    id<SearchStrategy> _underlyingStrategy;
+    id<SBGameTreeSearch> _underlyingStrategy;
 }
 
 /**
  Property holding the underlying strategy of this decorator.
  This could of course be another decorator. (Decorators are chainable.)
  */
-@property (copy) id<SearchStrategy> underlyingStrategy;
+@property (copy) id<SBGameTreeSearch> underlyingStrategy;
 
 @end

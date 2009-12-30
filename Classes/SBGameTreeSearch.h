@@ -6,16 +6,16 @@
  modification, are permitted provided that the following conditions are
  met:
  
- Redistributions of source code must retain the above copyright notice,
- this list of conditions and the following disclaimer.
-
- Redistributions in binary form must reproduce the above copyright
- notice, this list of conditions and the following disclaimer in the
- documentation and/or other materials provided with the distribution.
+   Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+  
+   Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
  
- Neither the name of the the author nor the names of its contributors
- may be used to endorse or promote products derived from this software
- without specific prior written permission.
+   Neither the name of the the author nor the names of its contributors
+   may be used to endorse or promote products derived from this software
+   without specific prior written permission.
  
  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
  IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
@@ -31,21 +31,20 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "SBGameTreeSearch.h"
+#import "SBGameTreeNode.h"
 
-@interface AbstractStub : NSObject < SBGameTreeNode > {
+/**
+ @brief Protocol for concrete search strategies.
+ 
+ You can create your own strategies implementing this protocol
+ and plug them in alongside the ones provided here.
+ */
+@protocol SBGameTreeSearch < NSObject >
 
-    NSString *_path;
-    NSDictionary *_tree;
+/**
+ Returns the best move found for this state.
+ */
+- (id)moveFromState:(id<SBGameTreeNode>)state;
 
-    NSUInteger _maxPlyVisited;
-    NSUInteger _countOfVisited;
-}
-
-@property (copy) NSString *path;
-@property NSUInteger countOfVisited;
-@property NSUInteger maxPlyVisited;
-
-@property (readonly) NSArray* candidates;
 
 @end

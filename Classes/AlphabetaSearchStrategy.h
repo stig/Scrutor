@@ -31,7 +31,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "SearchStrategy.h"
+#import "SBGameTreeSearch.h"
 
 /**
  @brief Negamax with Alphabeta pruning.
@@ -40,7 +40,7 @@
  
  @see http://en.wikipedia.org/wiki/Alpha-beta_pruning
  */
-@interface AlphabetaSearchStrategy : NSObject < SearchStrategy > {
+@interface AlphabetaSearchStrategy : NSObject < SBGameTreeSearch > {
 @private
     NSUInteger _maxPly;
 }

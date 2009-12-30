@@ -35,7 +35,7 @@
 
 @implementation CopyStateDecorator
 
-- (id)moveFromState:(id<SearchStrategyDelegate>)delegate {
+- (id)moveFromState:(id<SBGameTreeNode>)delegate {
     id copy = [(id)delegate copy];
     id move = [self.underlyingStrategy moveFromState:copy];
     [copy release];

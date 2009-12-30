@@ -31,7 +31,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "SearchStrategy.h"
+#import "SBGameTreeSearch.h"
 
-@interface RandomStub : NSObject < SearchStrategyDelegate >
+@interface RandomStub : NSObject < SBGameTreeNode >
 @end

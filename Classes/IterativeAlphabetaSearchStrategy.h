@@ -31,7 +31,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "SearchStrategy.h"
+#import "SBGameTreeSearch.h"
 
 /**
  @brief Iterative deepening Negamax with Alpha-beta pruning.
@@ -41,7 +41,7 @@
  
  @see http://en.wikipedia.org/wiki/Iterative_deepening_depth-first_search
  */
-@interface IterativeAlphabetaSearchStrategy : NSObject < SearchStrategy > {
+@interface IterativeAlphabetaSearchStrategy : NSObject < SBGameTreeSearch > {
 @private
     NSTimeInterval _timeInterval;
     BOOL _foundEnd;

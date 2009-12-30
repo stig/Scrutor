@@ -65,7 +65,7 @@
 
 #pragma mark -
 
-- (NSInteger)fitnessWithState:(id<SearchStrategyDelegate>)state plyLeft:(NSUInteger)plyLeft {
+- (NSInteger)fitnessWithState:(id<SBGameTreeNode>)state plyLeft:(NSUInteger)plyLeft {
 	NSParameterAssert(state);
     
 	if (!plyLeft)
@@ -88,7 +88,7 @@
     return best;
 }
 
-- (id)moveFromState:(id<SearchStrategyDelegate>)state {
+- (id)moveFromState:(id<SBGameTreeNode>)state {
 	NSParameterAssert(state);
     
     id bestMove = nil;

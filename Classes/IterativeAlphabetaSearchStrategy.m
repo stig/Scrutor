@@ -65,7 +65,7 @@
 
 #pragma mark -
 
-- (NSInteger)fitnessWithState:(id<SearchStrategyDelegate>)state
+- (NSInteger)fitnessWithState:(id<SBGameTreeNode>)state
                           ply:(NSUInteger)ply
                         alpha:(NSInteger)alpha
                          beta:(NSInteger)beta
@@ -116,7 +116,7 @@
     return moves2;
 }
 
-- (id)moveFromState:(id<SearchStrategyDelegate>)state {
+- (id)moveFromState:(id<SBGameTreeNode>)state {
 	NSParameterAssert(state);
     
     _cutOffDate = [NSDate dateWithTimeIntervalSinceNow:self.timeInterval * 0.9];

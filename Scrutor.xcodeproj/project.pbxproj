@@ -6,10 +6,23 @@
 	objectVersion = 45;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		BC886BEE10EAD29F00FAA90D /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = BC886BF310EAD2CE00FAA90D /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				BC886BED10EAD29F00FAA90D /* Doxygen */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		AA747D9F0F9514B9006C5449 /* Scrutor_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* Scrutor_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
-		BC72D5D510DD62610066B1B8 /* SearchStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = BC72D5D310DD62610066B1B8 /* SearchStrategy.h */; };
 		BC72D5E410DD633F0066B1B8 /* RandomSearchStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = BC72D5E210DD633F0066B1B8 /* RandomSearchStrategy.h */; };
 		BC72D5E510DD633F0066B1B8 /* RandomSearchStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D5E310DD633F0066B1B8 /* RandomSearchStrategy.m */; };
 		BC72D5F410DD63830066B1B8 /* libScrutor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libScrutor.a */; };
@@ -36,6 +49,8 @@
 		BC72D91110DE632C0066B1B8 /* CopyStateDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D90F10DE632C0066B1B8 /* CopyStateDecorator.m */; };
 		BC72D91610DE6C350066B1B8 /* CopyStateDecoratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D91510DE6C350066B1B8 /* CopyStateDecoratorTest.m */; };
 		BC72D92C10DE70540066B1B8 /* SingleMoveStub.m in Sources */ = {isa = PBXBuildFile; fileRef = BC72D92B10DE70540066B1B8 /* SingleMoveStub.m */; };
+		BC886BD210EACE7000FAA90D /* SBGameTreeSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = BC886BD110EACE7000FAA90D /* SBGameTreeSearch.h */; };
+		BC886BD410EACE7900FAA90D /* SBGameTreeNode.h in Headers */ = {isa = PBXBuildFile; fileRef = BC886BD310EACE7900FAA90D /* SBGameTreeNode.h */; };
 		BC9ABB6410DF614500E03758 /* Scrutor.h in Headers */ = {isa = PBXBuildFile; fileRef = BC9ABB6310DF614500E03758 /* Scrutor.h */; };
 /* End PBXBuildFile section */
 
@@ -47,12 +62,18 @@
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = Scrutor;
 		};
+		BC886BF410EAD2EA00FAA90D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC886BEE10EAD29F00FAA90D /* Documentation */;
+			remoteInfo = Documentation;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AA747D9E0F9514B9006C5449 /* Scrutor_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scrutor_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		BC72D5D310DD62610066B1B8 /* SearchStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchStrategy.h; sourceTree = "<group>"; };
 		BC72D5E210DD633F0066B1B8 /* RandomSearchStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomSearchStrategy.h; sourceTree = "<group>"; };
 		BC72D5E310DD633F0066B1B8 /* RandomSearchStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomSearchStrategy.m; sourceTree = "<group>"; };
 		BC72D5ED10DD63780066B1B8 /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +112,8 @@
 		BC72D91510DE6C350066B1B8 /* CopyStateDecoratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CopyStateDecoratorTest.m; sourceTree = "<group>"; };
 		BC72D92A10DE70540066B1B8 /* SingleMoveStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMoveStub.h; sourceTree = "<group>"; };
 		BC72D92B10DE70540066B1B8 /* SingleMoveStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMoveStub.m; sourceTree = "<group>"; };
+		BC886BD110EACE7000FAA90D /* SBGameTreeSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBGameTreeSearch.h; sourceTree = "<group>"; };
+		BC886BD310EACE7900FAA90D /* SBGameTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBGameTreeNode.h; sourceTree = "<group>"; };
 		BC9ABB6310DF614500E03758 /* Scrutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scrutor.h; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libScrutor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libScrutor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -149,8 +172,9 @@
 			isa = PBXGroup;
 			children = (
 				BC9ABB6310DF614500E03758 /* Scrutor.h */,
+				BC886BD310EACE7900FAA90D /* SBGameTreeNode.h */,
+				BC886BD110EACE7000FAA90D /* SBGameTreeSearch.h */,
 				BC72D94610DE757C0066B1B8 /* Decorator */,
-				BC72D5D310DD62610066B1B8 /* SearchStrategy.h */,
 				BC72D5E210DD633F0066B1B8 /* RandomSearchStrategy.h */,
 				BC72D5E310DD633F0066B1B8 /* RandomSearchStrategy.m */,
 				BC72D64310DD6F930066B1B8 /* NegamaxSearchStrategy.h */,
@@ -229,7 +253,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA747D9F0F9514B9006C5449 /* Scrutor_Prefix.pch in Headers */,
-				BC72D5D510DD62610066B1B8 /* SearchStrategy.h in Headers */,
 				BC72D5E410DD633F0066B1B8 /* RandomSearchStrategy.h in Headers */,
 				BC72D64510DD6F930066B1B8 /* NegamaxSearchStrategy.h in Headers */,
 				BC72D68C10DD768C0066B1B8 /* AlphabetaSearchStrategy.h in Headers */,
@@ -238,6 +261,8 @@
 				BC72D8F610DE57AE0066B1B8 /* AbstractDecorator.h in Headers */,
 				BC72D91010DE632C0066B1B8 /* CopyStateDecorator.h in Headers */,
 				BC9ABB6410DF614500E03758 /* Scrutor.h in Headers */,
+				BC886BD210EACE7000FAA90D /* SBGameTreeSearch.h in Headers */,
+				BC886BD410EACE7900FAA90D /* SBGameTreeNode.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +282,7 @@
 			);
 			dependencies = (
 				BC72D5F310DD637F0066B1B8 /* PBXTargetDependency */,
+				BC886BF510EAD2EA00FAA90D /* PBXTargetDependency */,
 			);
 			name = Tests;
 			productName = Tests;
@@ -295,6 +321,7 @@
 			targets = (
 				D2AAC07D0554694100DB518D /* Scrutor */,
 				BC72D5EC10DD63780066B1B8 /* Tests */,
+				BC886BEE10EAD29F00FAA90D /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -322,6 +349,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		BC886BED10EAD29F00FAA90D /* Doxygen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Doxygen;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n# See also http://developer.apple.com/tools/creatingdocsetswithdoxygen.html \n\nset -x\n\nVERSION=$(agvtool mvers -terse1)\n\nDOXYFILE=$DERIVED_FILES_DIR/doxygen.config\nDOXYGEN=/Applications/Doxygen.app/Contents/Resources/doxygen\nDOCSET=$INSTALL_DIR/Doxygen\n\nrm -rf $DOCSET\nmkdir -p $DOCSET || exit 1\nmkdir -p $DERIVED_FILES_DIR || exit 1\n\nif ! test -x $DOXYGEN ; then\n        echo \"*** Install Doxygen to get documentation generated for you automatically ***\"\n        exit 1\nfi\n\n# Create a doxygen configuration file with only the settings we care about\n$DOXYGEN -g - > $DOXYFILE\n\ncat <<EOF >> $DOXYFILE\n\nPROJECT_NAME           = $FULL_PRODUCT_NAME\nPROJECT_NUMBER         = $VERSION\nOUTPUT_DIRECTORY       = $DOCSET\nINPUT                  = $SOURCE_ROOT/Classes\nFILE_PATTERNS          = *.h *.m\n\nQUIET                  = YES\nGENERATE_LATEX         = NO\nGENERATE_HTML          = YES\nGENERATE_DOCSET        = YES\nDOCSET_FEEDNAME        = \"$PROJECT API Documentation\"\nDOCSET_BUNDLE_ID       = org.brautaset.$PROJECT\n\nEOF\n\n#  Run doxygen on the updated config file.\n#  doxygen creates a Makefile that does most of the heavy lifting.\n$DOXYGEN $DOXYFILE\n\n#  make will invoke docsetutil. Take a look at the Makefile to see how this is done.\nmake -C $DOCSET/html install\n\n#  Construct a temporary applescript file to tell Xcode to load a docset.\nrm -f $TEMP_DIR/loadDocSet.scpt\n\ncat <<EOF > $TEMP_DIR/loadDocSet.scpt\ntell application \"Xcode\"\n        load documentation set with path \"/Users/$USER/Library/Developer/Shared/Documentation/DocSets/org.brautaset.${PROJECT}.docset/\"\nend tell\nEOF\n\n# Run the load-docset applescript command.\nosascript $TEMP_DIR/loadDocSet.scpt\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -365,6 +406,11 @@
 			isa = PBXTargetDependency;
 			target = D2AAC07D0554694100DB518D /* Scrutor */;
 			targetProxy = BC72D5F210DD637F0066B1B8 /* PBXContainerItemProxy */;
+		};
+		BC886BF510EAD2EA00FAA90D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC886BEE10EAD29F00FAA90D /* Documentation */;
+			targetProxy = BC886BF410EAD2EA00FAA90D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -486,6 +532,27 @@
 			};
 			name = Release;
 		};
+		BC886BEF10EAD29F00FAA90D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = Documentation;
+			};
+			name = Debug;
+		};
+		BC886BF010EAD29F00FAA90D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = Documentation;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -512,6 +579,15 @@
 			buildConfigurations = (
 				BC72D5EF10DD637A0066B1B8 /* Debug */,
 				BC72D5F010DD637A0066B1B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC886BF310EAD2CE00FAA90D /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC886BEF10EAD29F00FAA90D /* Debug */,
+				BC886BF010EAD29F00FAA90D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
