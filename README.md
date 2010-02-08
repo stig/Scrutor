@@ -1,3 +1,5 @@
+=Scrutor=
+
 Scrutor contains several game-tree search implementations in
 Objective-C. These can be used to create computer players for a whole
 range of games including Chess, Checkers, Go, Reversi/Othello, Connect-4

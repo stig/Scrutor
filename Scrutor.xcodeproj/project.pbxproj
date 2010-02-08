@@ -122,7 +122,7 @@
 		BC72D92B10DE70540066B1B8 /* SingleMoveStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMoveStub.m; sourceTree = "<group>"; };
 		BC886BD110EACE7000FAA90D /* SBGameTreeSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBGameTreeSearch.h; sourceTree = "<group>"; };
 		BC886BD310EACE7900FAA90D /* SBGameTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBGameTreeNode.h; sourceTree = "<group>"; };
-		BC886CEC10EADF9E00FAA90D /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		BC886CEC10EADF9E00FAA90D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		BC9ABB6310DF614500E03758 /* Scrutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scrutor.h; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libScrutor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libScrutor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -165,7 +165,7 @@
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 				BC72D5EE10DD63780066B1B8 /* Tests-Info.plist */,
-				BC886CEC10EADF9E00FAA90D /* README */,
+				BC886CEC10EADF9E00FAA90D /* README.md */,
 			);
 			name = Scrutor;
 			sourceTree = "<group>";
