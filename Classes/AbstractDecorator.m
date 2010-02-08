@@ -68,6 +68,7 @@
 
 - (id)moveFromNode:(id<SBGameTreeNode>)state {
     NSAssert1(0, @"You must override %s in your decorator subclass", _cmd);
+    return nil;
 }
 
 @end
