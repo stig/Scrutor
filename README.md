@@ -1,4 +1,5 @@
-=Scrutor=
+Scrutor
+=======
 
 Scrutor contains several game-tree search implementations in
 Objective-C. These can be used to create computer players for a whole
