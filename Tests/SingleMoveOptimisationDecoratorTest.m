@@ -42,17 +42,16 @@
     underlyingStrategy.maxPly = 3u;
     
     strategy = [SingleMoveOptimisationDecorator new];
-    strategy.underlyingStrategy = [underlyingStrategy autorelease];
+    strategy.underlyingStrategy = underlyingStrategy;
 }
 
 - (void)tearDown {
-    [strategy release];
 }
 
 #pragma mark -
 
 - (void)testDecorator {
-    SingleMoveStub *stub = [[SingleMoveStub new] autorelease];
+    SingleMoveStub *stub = [SingleMoveStub new];
 
     id move;
     STAssertNoThrow(move = [strategy moveFromNode:stub], nil);

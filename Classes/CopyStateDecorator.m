@@ -37,9 +37,7 @@
 
 - (id)moveFromNode:(id<SBGameTreeNode>)delegate {
     id copy = [(id)delegate copy];
-    id move = [self.underlyingStrategy moveFromNode:copy];
-    [copy release];
-    return move;
+    return [self.underlyingStrategy moveFromNode:copy];
 }
 
 

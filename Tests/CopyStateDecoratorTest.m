@@ -42,17 +42,16 @@
     underlyingStrategy.maxPly = 3u;
     
     strategy = [CopyStateDecorator new];
-    strategy.underlyingStrategy = [underlyingStrategy autorelease];
+    strategy.underlyingStrategy = underlyingStrategy;
 }
 
 - (void)tearDown {
-    [strategy release];
 }
 
 #pragma mark -
 
 - (void)testDecorator {
-    NegamaxStub *stub = [[NegamaxStub new] autorelease];
+    NegamaxStub *stub = [NegamaxStub new];
     
     id move;
     STAssertNoThrow(move = [strategy moveFromNode:stub], nil);

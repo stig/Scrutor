@@ -46,6 +46,6 @@
 @property NSUInteger countOfVisited;
 @property NSUInteger maxPlyVisited;
 
-@property (readonly) NSArray* candidates;
+@property (weak, readonly) NSArray* candidates;
 
 @end

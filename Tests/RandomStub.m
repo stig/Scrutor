@@ -36,7 +36,7 @@
 @implementation RandomStub
 
 - (id)copyWithZone:(NSZone *)zone {
-    return [self retain];
+    return self;
 }
 
 - (NSArray*)legalMoves {

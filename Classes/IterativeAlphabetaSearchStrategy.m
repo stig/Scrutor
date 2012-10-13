@@ -133,25 +133,25 @@
         NSUInteger leafCount = 0;
         NSInteger alpha = INT_MIN;
         for (id m in moves) {
-            NSAutoreleasePool *pool = [NSAutoreleasePool new];
-            [state performLegalMove:m];
-            
-            NSInteger sc = -[self fitnessWithState:state ply:ply alpha:INT_MIN beta:-alpha];
-            if (sc > alpha) {
-                alpha = sc;
-                bestMoveAtPly = m;
+            @autoreleasepool {
+                [state performLegalMove:m];
+                
+                NSInteger sc = -[self fitnessWithState:state ply:ply alpha:INT_MIN beta:-alpha];
+                if (sc > alpha) {
+                    alpha = sc;
+                    bestMoveAtPly = m;
+                }
+                
+                // Did we search to the end of this branch?
+                if (_foundEnd)
+                    leafCount++;        
+                
+                // Record the score of this move so we can try that first next time.
+                // This is an attempt at optimising the number of alpha-beta cut-offs.
+                [scores setObject:[NSNumber numberWithInteger:sc] forKey:m];
+                
+                [state undoLegalMove:m];
             }
-            
-            // Did we search to the end of this branch?
-            if (_foundEnd)
-                leafCount++;        
-            
-            // Record the score of this move so we can try that first next time.
-            // This is an attempt at optimising the number of alpha-beta cut-offs.
-            [scores setObject:[NSNumber numberWithInteger:sc] forKey:m];
-            
-            [state undoLegalMove:m];
-            [pool drain];
         }
         
         // Are we out of time?

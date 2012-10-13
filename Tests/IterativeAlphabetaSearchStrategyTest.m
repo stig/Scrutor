@@ -42,14 +42,10 @@
     strategy = [IterativeAlphabetaSearchStrategy new];
 }
 
-- (void)tearDown {
-    [strategy release];
-}
-
 #pragma mark -
 
 - (void)testSearchSpaceExhausted {
-    NegamaxStub *stub = [[NegamaxStub new] autorelease];
+    NegamaxStub *stub = [NegamaxStub new];
     strategy.timeInterval = 10.0; // Allow many seconds.
     
     NSDate *start = [NSDate date];
@@ -64,7 +60,7 @@
 }
 
 - (void)testUsesUpTime {
-    IterativeStub *stub = [[IterativeStub new] autorelease];
+    IterativeStub *stub = [IterativeStub new];
     strategy.timeInterval = 0.1;
 
     NSDate *start = [NSDate date];
@@ -78,7 +74,7 @@
     STAssertFalse(strategy.foundEnd, @"Did not reach end in all paths");
     
     // Verify that a plain AlphaBeta to the highest completed level finds the same best move.
-    SBAlphabetaSearch *ab = [[SBAlphabetaSearch new] autorelease];
+    SBAlphabetaSearch *ab = [SBAlphabetaSearch new];
 
     // Subtract 1 from the maxPlyVisited because that is the highest attempted level.
     ab.maxPly = stub.maxPlyVisited - 1;
@@ -90,7 +86,7 @@
 
 - (void)testCopy {
     strategy.timeInterval = random();
-    IterativeAlphabetaSearchStrategy *copy = [[strategy copy] autorelease];
+    IterativeAlphabetaSearchStrategy *copy = [strategy copy];
     STAssertEqualObjects(copy, strategy, nil);
     STAssertEquals(copy.timeInterval, strategy.timeInterval, nil);
 }

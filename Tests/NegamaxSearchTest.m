@@ -42,11 +42,6 @@
     strategy = [SBNegamaxSearch new];
 }
 
-- (void)tearDown {
-    [stub release];
-    [strategy release];
-}
-
 #pragma mark -
 
 - (void)testMaxPly1 {
@@ -93,7 +88,7 @@
 
 - (void)testCopy {
     strategy.maxPly = random();
-    SBNegamaxSearch *copy = [[strategy copy] autorelease];
+    SBNegamaxSearch *copy = [strategy copy];
     STAssertEqualObjects(copy, strategy, nil);
     STAssertEquals(copy.maxPly, strategy.maxPly, nil);
 }

@@ -45,7 +45,7 @@
 #pragma mark -
 
 - (id)copyWithZone:(NSZone *)zone {
-    return [self retain];
+    return self;
 }
 
 - (BOOL)isEqual:(id)object {

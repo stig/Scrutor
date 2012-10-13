@@ -94,18 +94,18 @@
     id bestMove = nil;
     NSInteger best = INT_MIN;
     for (id m in [state legalMoves]) {
-        NSAutoreleasePool *pool = [NSAutoreleasePool new];        
-        [state performLegalMove:m];
-        
-        NSInteger sc = -[self fitnessWithState:state plyLeft:self.maxPly-1];
-        
-        if (sc > best) {
-            best = sc;
-            bestMove = m;
+        @autoreleasepool {        
+            [state performLegalMove:m];
+            
+            NSInteger sc = -[self fitnessWithState:state plyLeft:self.maxPly-1];
+            
+            if (sc > best) {
+                best = sc;
+                bestMove = m;
+            }
+            
+            [state undoLegalMove:m];
         }
-        
-        [state undoLegalMove:m];
-        [pool drain];
     }
     
     return bestMove;

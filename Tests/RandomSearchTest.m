@@ -41,10 +41,6 @@
     strategy = [SBRandomSearch new];
 }
 
-- (void)tearDown {
-    [strategy release];
-}
-
 #pragma mark -
 
 - (NSInteger)searchCount {
@@ -52,7 +48,7 @@
 }    
 
 - (void)testRandomSearch {
-    RandomStub *stub = [[RandomStub new] autorelease];    
+    RandomStub *stub = [RandomStub new];    
     
     NSCountedSet *set = [NSCountedSet new];
     for (int i = 0; i < [self searchCount]; i++) {
@@ -71,7 +67,7 @@
 #pragma mark -
 
 - (void)testCopy {
-    SBRandomSearch *copy = [[strategy copy] autorelease];
+    SBRandomSearch *copy = [strategy copy];
     STAssertEqualObjects(copy, strategy, nil);
 }
 
