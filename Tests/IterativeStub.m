@@ -59,7 +59,7 @@
         for (NSString *node in nodes) {
             NSInteger spread = 1e5;
             NSInteger score = (random() % spread) - (spread / 2);
-            [tree setObject:[NSNumber numberWithInteger:score] forKey:node];
+            [tree setObject:@(score) forKey:node];
         }
                 
         _tree = [tree copy];

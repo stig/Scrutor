@@ -39,7 +39,7 @@
 
 - (NSArray*)legalMoves {
     _callCount++;
-    return [NSArray arrayWithObject:@"A"];
+    return @[@"A"];
 }        
 
 - (NSInteger)fitness {
