@@ -6,21 +6,6 @@
 	objectVersion = 45;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		BC886BEE10EAD29F00FAA90D /* Documentation */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = BC886BF310EAD2CE00FAA90D /* Build configuration list for PBXAggregateTarget "Documentation" */;
-			buildPhases = (
-				BC886BED10EAD29F00FAA90D /* Doxygen */,
-			);
-			dependencies = (
-				BC886C9510EADAAC00FAA90D /* PBXTargetDependency */,
-			);
-			name = Documentation;
-			productName = Documentation;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		AA747D9F0F9514B9006C5449 /* Scrutor_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* Scrutor_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
@@ -57,20 +42,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		BC72D5F210DD637F0066B1B8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = Scrutor;
-		};
-		BC886BF410EAD2EA00FAA90D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BC886BEE10EAD29F00FAA90D;
-			remoteInfo = Documentation;
-		};
-		BC886C9410EADAAC00FAA90D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
@@ -300,7 +271,6 @@
 			);
 			dependencies = (
 				BC72D5F310DD637F0066B1B8 /* PBXTargetDependency */,
-				BC886BF510EAD2EA00FAA90D /* PBXTargetDependency */,
 			);
 			name = Tests;
 			productName = Tests;
@@ -331,7 +301,11 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "Scrutor" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* Scrutor */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
@@ -339,7 +313,6 @@
 			targets = (
 				D2AAC07D0554694100DB518D /* Scrutor */,
 				BC72D5EC10DD63780066B1B8 /* Tests */,
-				BC886BEE10EAD29F00FAA90D /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -367,20 +340,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-		BC886BED10EAD29F00FAA90D /* Doxygen */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Doxygen;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n# See also http://developer.apple.com/tools/creatingdocsetswithdoxygen.html \n\nset -x\n\nVERSION=$(agvtool mvers -terse1)\n\nDOXYFILE=$DERIVED_FILES_DIR/doxygen.config\nDOXYGEN=/Applications/Doxygen.app/Contents/Resources/doxygen\nDOCSET=$INSTALL_DIR/Doxygen\nMAINPAGE=$DERIVED_FILES_DIR/mainpage.h\n\nrm -rf $DOCSET\nmkdir -p $DOCSET || exit 1\nmkdir -p $DERIVED_FILES_DIR || exit 1\n\necho \"/** @mainpage $PROJECT\" > $MAINPAGE\nsed 1,2D README.md >> $MAINPAGE\necho \"*/\" >> $MAINPAGE\n\nif ! test -x $DOXYGEN ; then\n        echo \"*** Install Doxygen to get documentation generated for you automatically ***\"\n        exit 1\nfi\n\n# Create a doxygen configuration file with only the settings we care about\n$DOXYGEN -g - > $DOXYFILE\n\ncat <<EOF >> $DOXYFILE\n\nPROJECT_NAME           = $FULL_PRODUCT_NAME\nPROJECT_NUMBER         = $VERSION\nOUTPUT_DIRECTORY       = $DOCSET\nINPUT                  = $SOURCE_ROOT/Classes $MAINPAGE\nFILE_PATTERNS          = *.h *.m\n\nQUIET                  = YES\nGENERATE_LATEX         = NO\nGENERATE_HTML          = YES\nGENERATE_DOCSET        = YES\nDOCSET_FEEDNAME        = \"$PROJECT API Documentation\"\nDOCSET_BUNDLE_ID       = org.brautaset.$PROJECT\n\nEOF\n\n#  Run doxygen on the updated config file.\n#  doxygen creates a Makefile that does most of the heavy lifting.\n$DOXYGEN $DOXYFILE\n\n#  make will invoke docsetutil. Take a look at the Makefile to see how this is done.\nmake -C $DOCSET/html install\n\n#  Construct a temporary applescript file to tell Xcode to load a docset.\nrm -f $TEMP_DIR/loadDocSet.scpt\n\ncat <<EOF > $TEMP_DIR/loadDocSet.scpt\ntell application \"Xcode\"\n        load documentation set with path \"/Users/$USER/Library/Developer/Shared/Documentation/DocSets/org.brautaset.${PROJECT}.docset/\"\nend tell\nEOF\n\n# Run the load-docset applescript command.\nosascript $TEMP_DIR/loadDocSet.scpt\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -425,33 +384,18 @@
 			target = D2AAC07D0554694100DB518D /* Scrutor */;
 			targetProxy = BC72D5F210DD637F0066B1B8 /* PBXContainerItemProxy */;
 		};
-		BC886BF510EAD2EA00FAA90D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BC886BEE10EAD29F00FAA90D /* Documentation */;
-			targetProxy = BC886BF410EAD2EA00FAA90D /* PBXContainerItemProxy */;
-		};
-		BC886C9510EADAAC00FAA90D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D2AAC07D0554694100DB518D /* Scrutor */;
-			targetProxy = BC886C9410EADAAC00FAA90D /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1DEB921F08733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/Scrutor.dst;
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Scrutor_Prefix.pch;
-				GCC_VERSION = 4.2;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = Scrutor;
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -461,15 +405,13 @@
 		1DEB922008733DC00010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/Scrutor.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Scrutor_Prefix.pch;
-				GCC_VERSION = 4.2;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = Scrutor;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Release;
 		};
@@ -477,13 +419,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.1.2;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -491,12 +434,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.1.2;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
@@ -556,27 +500,6 @@
 			};
 			name = Release;
 		};
-		BC886BEF10EAD29F00FAA90D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = Documentation;
-			};
-			name = Debug;
-		};
-		BC886BF010EAD29F00FAA90D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				PRODUCT_NAME = Documentation;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -603,15 +526,6 @@
 			buildConfigurations = (
 				BC72D5EF10DD637A0066B1B8 /* Debug */,
 				BC72D5F010DD637A0066B1B8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BC886BF310EAD2CE00FAA90D /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BC886BEF10EAD29F00FAA90D /* Debug */,
-				BC886BF010EAD29F00FAA90D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

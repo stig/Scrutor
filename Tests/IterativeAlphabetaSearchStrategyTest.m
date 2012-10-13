@@ -74,7 +74,7 @@
     STAssertNotNil(move, nil);
     STAssertTrue(stub.maxPlyVisited > 5u, nil);
     STAssertTrue(stub.maxPlyVisited < 9u, nil);
-    STAssertEqualsWithAccuracy(duration, 0.1, 0.005, nil);
+    STAssertEqualsWithAccuracy(duration, 0.1, 0.05, nil);
     STAssertFalse(strategy.foundEnd, @"Did not reach end in all paths");
     
     // Verify that a plain AlphaBeta to the highest completed level finds the same best move.
